@@ -6,7 +6,7 @@ CREATE TABLE homepage (
 	title varchar(64),
 	description varchar(1024),
 	PRIMARY KEY (id)
-);
+) ENGINE=INNODB ;
 
 INSERT INTO homepage (title, description)
 	VALUES ("notre titre", "notre description");
