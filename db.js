@@ -7,12 +7,20 @@ const co = mysql.createConnection({
 })
 
 
-const getHomepage = async () => {
-  const connection = await co
-  const result = await connection.execute('SELECT * FROM homepage')
-  return result[0]  
+const exec = async (query, params) => {
+	const connection = await co
+  const result = await connection.execute(query, params)
+  return result[0] 
 }
 
+const getHomepage = () => exec('SELECT * FROM homepage')
+const updateHomepage = params => exec('UPDATE homepage SET title=?, description=? WHERE id=1', [params.title, params.description])
+
+updateHomepage({ title: 'Fanchon Fanchon', description: 'FanchonFanchon est aux toilettes'})
+getHomepage()
+	//.then(homepage => console.log('fanchon:', homepage))
+
 module.exports = {
-	getHomepage
+	getHomepage, 
+  updateHomepage
 }

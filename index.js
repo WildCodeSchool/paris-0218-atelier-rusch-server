@@ -3,7 +3,17 @@ const app = express()
 const mysql = require('mysql2/promise')
 const db = require('./db')
 
-db.getHomepage().then(console.log)
+
+
+app.use((request, response, next) => {
+  response.header('Access-Control-Allow-Origin', request.headers.origin)
+  response.header('Access-Control-Allow-Credentials', 'true') // important
+  response.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE') // important
+  response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+})
+
+// db.getHomepage().then(console.log)
 
 // .then(connection =>{
 // 	return connection.query('SELECT * FROM HOMEPAGE')
