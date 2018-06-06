@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "nodemon src",
+    "test": "echo 'no tests'",
+    "lint:fix": "standard --fix | snazzy",
+    "lint": "standard | snazzy"
+  },
+  "dependencies": {
+    "nodemon": "^1.17.2",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1"
+  }
+}
