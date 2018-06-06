@@ -18,9 +18,9 @@ const updateHomepage = params => exec('UPDATE homepage SET title=?, description=
 
 const getArticle = () => exec('SELECT * FROM article')
 
-updateHomepage({ title: 'Fanchon Fanchon', description: 'FanchonFanchon est aux toilettes'})
+updateHomepage({ title: 'FanFan', description: 'FanFan est aux toilettes'})
 getHomepage()
-	//.then(homepage => console.log('fanchon:', homepage))
+	//.then(homepage => console.log('fanch:', homepage))
 
 module.exports = {
 	getHomepage,
