@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const db = require('./db')
 
+const port = process.env.PORT || 3456
+
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Origin', request.headers.origin)
   response.header('Access-Control-Allow-Credentials', 'true') // important
@@ -15,4 +17,4 @@ app.get('/article', (request, response) => {
     .then(article => response.json(article))
 })
 
-app.listen(3003, () => console.log('Oh oui, je suis connecté au port 3003!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!'))
+app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))
