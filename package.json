@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "nodemon src",
-    "test": "echo 'no tests'",
+    "test": "jest --watchAll",
     "lint:fix": "standard --fix | snazzy",
     "lint": "standard | snazzy"
   },
