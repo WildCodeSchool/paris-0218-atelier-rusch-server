@@ -14,4 +14,5 @@ app.get('/article', (request, response) => {
   db.getArticle()
     .then(article => response.json(article))
 })
+
 app.listen(3003, () => console.log('Oh oui, je suis connecté au port 3003!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!'))
