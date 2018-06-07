@@ -10,10 +10,6 @@ app.use((request, response, next) => {
   next()
 })
 
-app.get('/homepage', (request, response) => {
-  db.getHomepage()
-    .then(homepage => response.json(homepage))
-})
 
 app.get('/article', (request, response) => {
   db.getArticle()
