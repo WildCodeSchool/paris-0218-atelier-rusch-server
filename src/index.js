@@ -12,9 +12,9 @@ app.use((request, response, next) => {
   next()
 })
 
-app.get('/article', (request, response) => {
-  db.getArticle()
-    .then(article => response.json(article))
+app.get('/articles', (request, response) => {
+  db.getArticles()
+    .then(articles => response.json(articles))
 })
 
 app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))
