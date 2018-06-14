@@ -1,8 +1,12 @@
 const express = require('express')
-const app = express()
-const db = require('./db')
+const bodyParser = require('body-parser')
 
+const db = require('./db')
 const port = process.env.PORT || 3456
+
+const app = express()
+
+// MIDDLEWARES
 
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Origin', request.headers.origin)
@@ -12,14 +16,31 @@ app.use((request, response, next) => {
   next()
 })
 
-app.get('/articles', (request, response) => {
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
+
+// ROUTES
+
+app.get('/articles', (request, response, next) => {
   db.getArticles()
     .then(articles => response.json(articles))
 })
 
-app.post('/submitArticle', (request, response) => {
-  db.writeArticle()
-    .then(article => response.json('ok'))
+app.post('/articles', (request, response, next) => {
+  const article = request.body
+
+  db.writeArticle(article)
+    .then(() => response.json('ok'))
+    .catch(next)
+})
+
+app.put('/articles/:id', (request, response, next) => {
+  const article = request.body
+  article.id = request.params.id
+
+  db.updateArticle(article)
+    .then(() => response.json('ok'))
     .catch(next)
 })
 

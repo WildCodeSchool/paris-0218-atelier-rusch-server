@@ -18,12 +18,18 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 
 const getArticles = () => exec('SELECT * FROM articles')
 
-const writeArticle = params => exec(`
+const writeArticle = article => exec(`
   INSERT INTO articles (section, title, shortDescription, content)
-  VALUES (?, ?, ?, ?)`, [ params.section, params.title, params.shortDescription, params.content ])
+  VALUES (?, ?, ?, ?)`, [ article.section, article.title, article.shortDescription, article.content ])
+
+const updateArticle = article => exec(`
+  UPDATE articles
+  SET section=?, title=?, shortDescription=?, content=?
+  WHERE id=?`, [ article.section, article.title, article.shortDescription, article.content, article.id ])
 
 
 module.exports = {
   getArticles,
-  writeArticle
+  writeArticle,
+  updateArticle,
 }
