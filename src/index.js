@@ -17,4 +17,10 @@ app.get('/articles', (request, response) => {
     .then(articles => response.json(articles))
 })
 
+app.post('/submitArticle', (request, response) => {
+  db.writeArticle()
+    .then(article => response.json('ok'))
+    .catch(next)
+})
+
 app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))
