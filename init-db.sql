@@ -101,7 +101,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Chantier participatif",
     "Aménagement urbain du square de Grenoble à Massy",
     "false",
-    "Mobilité",
+    "Innovation",
     "Objectif : Mobiliser, encadrer et animer des chantiers ouverts pour le réaménagement et la réappropriation d’un square en cœur d’îlot de quartier politique de la ville, Massy Opéra. \n Chantiers Participatifs : Suite aux ateliers participatifs, un projet co-construit par les habitants et les locataires a été validé pour passer en phase de construction. Le chantier s’est déroulé de février à mai 2017. Sur plusieurs journées de chantier, les locataires, habitants petits et grands, motivés et impliqués dans le projet se sont réunis pour bécher, desherber, contruire, peindre, semer, planter… Le Square a été inauguré le 23 mai en fanfare et en couleur."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -109,7 +109,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Conception participative d’espace",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "true",
-    "Mobilité",
+    "Innovation",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -118,7 +118,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Chantier participatif",
     "Aménagement urbain du square de Grenoble à Massy",
     "false",
-    "Mobilité",
+    "Innovation",
     "Objectif : Mobiliser, encadrer et animer des chantiers ouverts pour le réaménagement et la réappropriation d’un square en cœur d’îlot de quartier politique de la ville, Massy Opéra. \n Chantiers Participatifs : Suite aux ateliers participatifs, un projet co-construit par les habitants et les locataires a été validé pour passer en phase de construction. Le chantier s’est déroulé de février à mai 2017. Sur plusieurs journées de chantier, les locataires, habitants petits et grands, motivés et impliqués dans le projet se sont réunis pour bécher, desherber, contruire, peindre, semer, planter… Le Square a été inauguré le 23 mai en fanfare et en couleur."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -127,7 +127,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Conception participative d’espace",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "false",
-    "Mobilité",
+    "Innovation",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -136,7 +136,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Chantier participatif",
     "Aménagement urbain du square de Grenoble à Massy",
     "true",
-    "Mobilité",
+    "Aménagement urbain",
     "Objectif : Mobiliser, encadrer et animer des chantiers ouverts pour le réaménagement et la réappropriation d’un square en cœur d’îlot de quartier politique de la ville, Massy Opéra. \n Chantiers Participatifs : Suite aux ateliers participatifs, un projet co-construit par les habitants et les locataires a été validé pour passer en phase de construction. Le chantier s’est déroulé de février à mai 2017. Sur plusieurs journées de chantier, les locataires, habitants petits et grands, motivés et impliqués dans le projet se sont réunis pour bécher, desherber, contruire, peindre, semer, planter… Le Square a été inauguré le 23 mai en fanfare et en couleur."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -145,7 +145,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Conception participative d’espace",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "false",
-    "Mobilité",
+    "Aménagement urbain",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -154,7 +154,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Conception participative d’espace",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "false",
-    "Mobilité",
+    "Aménagement urbain",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -163,7 +163,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Chantier participatif",
     "Aménagement urbain du square de Grenoble à Massy",
     "false",
-    "Mobilité",
+    "Aménagement urbain",
     "Objectif : Mobiliser, encadrer et animer des chantiers ouverts pour le réaménagement et la réappropriation d’un square en cœur d’îlot de quartier politique de la ville, Massy Opéra. \n Chantiers Participatifs : Suite aux ateliers participatifs, un projet co-construit par les habitants et les locataires a été validé pour passer en phase de construction. Le chantier s’est déroulé de février à mai 2017. Sur plusieurs journées de chantier, les locataires, habitants petits et grands, motivés et impliqués dans le projet se sont réunis pour bécher, desherber, contruire, peindre, semer, planter… Le Square a été inauguré le 23 mai en fanfare et en couleur."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -172,7 +172,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Conception participative d’espace",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "false",
-    "Mobilité",
+    "Programmation",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -181,7 +181,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Chantier participatif",
     "Aménagement urbain du square de Grenoble à Massy",
     "false",
-    "Mobilité",
+    "Programmation",
     "Objectif : Mobiliser, encadrer et animer des chantiers ouverts pour le réaménagement et la réappropriation d’un square en cœur d’îlot de quartier politique de la ville, Massy Opéra. \n Chantiers Participatifs : Suite aux ateliers participatifs, un projet co-construit par les habitants et les locataires a été validé pour passer en phase de construction. Le chantier s’est déroulé de février à mai 2017. Sur plusieurs journées de chantier, les locataires, habitants petits et grands, motivés et impliqués dans le projet se sont réunis pour bécher, desherber, contruire, peindre, semer, planter… Le Square a été inauguré le 23 mai en fanfare et en couleur."
   );
   INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
@@ -190,7 +190,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Conception participative d’espace",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "true",
-    "Mobilité",
+    "Programmation",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
 
