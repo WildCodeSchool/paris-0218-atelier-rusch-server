@@ -19,23 +19,26 @@ CREATE TABLE articles (
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
+CREATE TABLE filters (
+  id INT NOT NULL AUTO_INCREMENT,
+  section varchar(64),
+  filterTag varchar(64),
+  createdAt timestamp DEFAULT current_timestamp,
+  PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("LabRusch", 
+  	"Design");
+    
+
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
   VALUES ("Lab", 
   	"Le design, un processus de conception urbaine", 
     "À quoi peut concrètement servir le design dans le domaine urbain ?", 
     "false",
     "Mobilité",
-    "En février 2017, Chartres Métropole inaugurait la première tranche de la future 
-    Cité de l’innovation, qui porte le nom du CM 101. Le premier lot offre déjà plus
-     de 1150 m² de surface aménagées et accueille un incubateur (géré par le Centre 
-     Européen d’Entreprise et d’Innovation de la région Centre), 13 jeunes pousses,
-      un espace de co-working, un espace de restauration, des salles de réunion et 
-      un mini Fablab. Ce projet nous tient particulièrement à cœur car nous revenons
-       sur une de nos premières réalisations ! En 2016 Chartres Métropole nous avait 
-       missionné pour réunir les résidents, futurs résidents et partenaires de la Cité
-        et réfléchir à la vision du site, sa forme, ses usages et fonctionnalités. 
-        L’ensemble du travail de co-construction avait été remis aux architectes 
-        pour intégrer les problématiques, besoins et idées dans la planification des futurs espaces. En découvrant les hangars transformés et donc le résultat des post-its remplis par des idées et des croquis, nous avons hâte d’y apporter une nouvelle touche de design de service ! A l’horizon 2019, la Cité de l’innovation représentera plus de 5100 m² avec l’ouverture de deux nouveaux bâtiments, capables d’accueillir un écosystème complet mettant en valeur l’innovation à 360°. C’est à dire, un environnement propice au développement de projets innovants des jeunes pousses, des étudiants, des chercheurs, des TPE/PME, des grandes entreprises; où chacun pourra interagir avec un réseau de professionnels, d’institutionnels et d’experts. Pour ses futurs locaux, Chartres Métropole a recensé auprès des résidents actuels et futurs, le besoin d’un accompagnement continu sur la communication et une aide en marketing. De ce constat, est née l’idée de proposer un « marketing lab ». Notre mission de cette année sera d’accompagner la définition, la co-conception et la mise en place d’un lieu de service marketing et communication au sein du CM101. En partenariat avec l’agence UZFUL, agence spécialisée en marketing engagé et avec la participation des résidents, futurs résidents, partenaires et acteurs ressources du territoire, nous rendrons tangible ce concept inédit.");
+    "En février 2017, Chartres Métropole inaugurait la première tranche de la future Cité de l’innovation, qui porte le nom du CM 101. Le premier lot offre déjà plus de 1150 m² de surface aménagées et accueille un incubateur (géré par le Centre Européen d’Entreprise et d’Innovation de la région Centre), 13 jeunes pousses, un espace de co-working, un espace de restauration, des salles de réunion et un mini Fablab. Ce projet nous tient particulièrement à cœur car nous revenons sur une de nos premières réalisations ! En 2016 Chartres Métropole nous avait missionné pour réunir les résidents, futurs résidents et partenaires de la Cité et réfléchir à la vision du site, sa forme, ses usages et fonctionnalités. L’ensemble du travail de co-construction avait été remis aux architectes pour intégrer les problématiques, besoins et idées dans la planification des futurs espaces. En découvrant les hangars transformés et donc le résultat des post-its remplis par des idées et des croquis, nous avons hâte d’y apporter une nouvelle touche de design de service ! A l’horizon 2019, la Cité de l’innovation représentera plus de 5100 m² avec l’ouverture de deux nouveaux bâtiments, capables d’accueillir un écosystème complet mettant en valeur l’innovation à 360°. C’est à dire, un environnement propice au développement de projets innovants des jeunes pousses, des étudiants, des chercheurs, des TPE/PME, des grandes entreprises; où chacun pourra interagir avec un réseau de professionnels, d’institutionnels et d’experts. Pour ses futurs locaux, Chartres Métropole a recensé auprès des résidents actuels et futurs, le besoin d’un accompagnement continu sur la communication et une aide en marketing. De ce constat, est née l’idée de proposer un « marketing lab ». Notre mission de cette année sera d’accompagner la définition, la co-conception et la mise en place d’un lieu de service marketing et communication au sein du CM101. En partenariat avec l’agence UZFUL, agence spécialisée en marketing engagé et avec la participation des résidents, futurs résidents, partenaires et acteurs ressources du territoire, nous rendrons tangible ce concept inédit.");
 
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
   VALUES ("Lab", 
@@ -43,18 +46,7 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Aménagement de la future Cité de l’innovation à Chartres", 
     "false",
     "Mobilité",
-    "Alors qu’il est identifié comme une pratique à but principalement esthétique,
-     l’ampleur du design reste méconnue. Au croisement de nombreux enjeux, notamment
-      techniques, artistiques et sociétaux, le design a toujours existé mais s’est 
-      construit en discipline à partir de la révolution industrielle. D’ailleurs,
-       il est souvent, à tort, seulement associé au design industriel. Or, dans
-        les années 20, l’école expérimentale du Bauhaus a fait émerger une pensée
-         dite aujourd’hui “design” en confrontant les arts traditionnels (danse, 
-         peinture, etc.) à l’artisanat (métal, bois, textile, etc.). Une approche 
-         qui a profondément influencé le design industriel, mais aussi l’architecture
-          moderne, en intégrant une démarche de conception qui intègre les usages.
-           D’ailleurs, cela a contribué à faire évoluer le métier d’architecte vers
-            celui de designer ! Le design s’applique aujourd’hui dans des domaines variés : design social, design de services, design global, … En France, le design était déjà très présent dans la conception urbaine, mais principalement par le prisme du mobilier urbain. Depuis quelques années, grâce à l’innovation sociale inspirée des pays nordiques, le design est venu s’imprégner dans le paysage urbain pour donner un sens plus humain aux services et aux mobiliers, mais aussi repenser les relations entre politiques publiques et citoyens, pour davantage de co-conception et de liens entre des parties prenantes. Mais à quoi le design sert-il concrètement ? Le design, c’est d’abord concevoir des produits, des services, des systèmes et des espaces, mais cela peut aussi améliorer l’existant (outil ou service) dans le but de rendre son usage le plus simple possible. Dans les deux cas, l’objectif est donc de résoudre des problèmes en apportant des solutions nouvelles et innovantes pour répondre aux besoins précis des usagers  ! Le design n’est pas seulement élaborer des objets aux formes élégantes. Non, le design veut dire “conception” et il se trouve donc partout ! Quand on étudiait l’emplacement des anses sur un vase antique, c’était déjà une réflexion proche du design puisqu’on s’appuyait sur l’usage. Réfléchir à l’optimisation d’un site internet ou d’une application en intégrant l’expérience des utilisateurs, c’est aussi du design. Ils s’agit de concevoir et d’améliorer, en adoptant une méthodologie, une manière de penser qui passe par différentes étapes clés : compatir, définir, imaginer, synthétiser, prototyper, tester, dans une amélioration continue laissant un droit à l’erreur. Ainsi, les designers sont partout : dans les médias, les laboratoires, les hôpitaux, les entreprises, les gouvernements. Là où il y a des usages et des interactions, de la conception, il y a du design !");
+    "Alors qu’il est identifié comme une pratique à but principalement esthétique, l’ampleur du design reste méconnue. Au croisement de nombreux enjeux, notamment techniques, artistiques et sociétaux, le design a toujours existé mais s’est construit en discipline à partir de la révolution industrielle. D’ailleurs, il est souvent, à tort, seulement associé au design industriel. Or, dans les années 20, l’école expérimentale du Bauhaus a fait émerger une pensée dite aujourd’hui “design” en confrontant les arts traditionnels (danse, peinture, etc.) à l’artisanat (métal, bois, textile, etc.). Une approche qui a profondément influencé le design industriel, mais aussi l’architecture moderne, en intégrant une démarche de conception qui intègre les usages. D’ailleurs, cela a contribué à faire évoluer le métier d’architecte vers celui de designer ! Le design s’applique aujourd’hui dans des domaines variés : design social, design de services, design global, … En France, le design était déjà très présent dans la conception urbaine, mais principalement par le prisme du mobilier urbain. Depuis quelques années, grâce à l’innovation sociale inspirée des pays nordiques, le design est venu s’imprégner dans le paysage urbain pour donner un sens plus humain aux services et aux mobiliers, mais aussi repenser les relations entre politiques publiques et citoyens, pour davantage de co-conception et de liens entre des parties prenantes. Mais à quoi le design sert-il concrètement ? Le design, c’est d’abord concevoir des produits, des services, des systèmes et des espaces, mais cela peut aussi améliorer l’existant (outil ou service) dans le but de rendre son usage le plus simple possible. Dans les deux cas, l’objectif est donc de résoudre des problèmes en apportant des solutions nouvelles et innovantes pour répondre aux besoins précis des usagers  ! Le design n’est pas seulement élaborer des objets aux formes élégantes. Non, le design veut dire “conception” et il se trouve donc partout ! Quand on étudiait l’emplacement des anses sur un vase antique, c’était déjà une réflexion proche du design puisqu’on s’appuyait sur l’usage. Réfléchir à l’optimisation d’un site internet ou d’une application en intégrant l’expérience des utilisateurs, c’est aussi du design. Ils s’agit de concevoir et d’améliorer, en adoptant une méthodologie, une manière de penser qui passe par différentes étapes clés : compatir, définir, imaginer, synthétiser, prototyper, tester, dans une amélioration continue laissant un droit à l’erreur. Ainsi, les designers sont partout : dans les médias, les laboratoires, les hôpitaux, les entreprises, les gouvernements. Là où il y a des usages et des interactions, de la conception, il y a du design !");
 
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
   VALUES ("Lab",

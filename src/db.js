@@ -27,9 +27,23 @@ const updateArticle = article => exec(`
   SET section=?, title=?, shortDescription=?, hasStar=?, tags=?, content=?
   WHERE id=?`, [ article.section, article.title, article.shortDescription, article.hasStar, article.tags, article.content, article.id ])
 
+const getFilters = () => exec('SELECT * FROM filters')
+
+const writeFilter = filter => exec(`
+  INSERT INTO filters (section, filterTag)
+  VALUES (?, ?)`, [ filter.section, filter.filterTag ])
+
+const updateFilter = filter => exec(`
+  UPDATE filters
+  SET section=?, filterTag=?
+  WHERE id=?`, [ filter.section, filter.filterTag, filter.id ])
+
 
 module.exports = {
   getArticles,
   writeArticle,
   updateArticle,
+  getFilters,
+  writeFilter,
+  updateFilter,
 }

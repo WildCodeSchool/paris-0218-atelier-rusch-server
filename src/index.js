@@ -44,4 +44,26 @@ app.put('/articles/:id', (request, response, next) => {
     .catch(next)
 })
 
+app.get('/filters', (request, response, next) => {
+  db.getFilters()
+    .then(filters => response.json(filters))
+})
+
+app.post('/filters', (request, response, next) => {
+  const filter = request.body
+
+  db.writeFilter(filter)
+    .then(() => response.json('ok'))
+    .catch(next)
+})
+
+app.put('/filters/:id', (request, response, next) => {
+  const filter = request.body
+  filter.id = request.params.id
+
+  db.updateFilter(filter)
+    .then(() => response.json('ok'))
+    .catch(next)
+})
+
 app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))
