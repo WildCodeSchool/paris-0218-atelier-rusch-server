@@ -30,6 +30,52 @@ CREATE TABLE filters (
 INSERT INTO filters (section, filterTag)
   VALUES ("LabRusch", 
   	"Design");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("LabRusch", 
+  	"Innovation");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("LabRusch", 
+  	"Urbanisme");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("LabRusch", 
+  	"Social");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("Projets", 
+  	"Mobilité");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("Projets", 
+  	"Aménagement urbain");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("Projets", 
+  	"Logements sociaux");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("Projets", 
+  	"Programmation");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("Projets", 
+  	"Services numériques");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("Projets", 
+  	"Innovation");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("Projets", 
+  	"Services urbains");
+
+INSERT INTO filters (section, filterTag)
+  VALUES ("Projets", 
+  	"Social");
+
+
     
 
 INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
