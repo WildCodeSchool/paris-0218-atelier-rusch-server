@@ -16,6 +16,8 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 
 // CRUD
 
+//Articles
+
 const getArticles = () => exec('SELECT * FROM articles')
 
 const writeArticle = article => exec(`
@@ -26,6 +28,8 @@ const updateArticle = article => exec(`
   UPDATE articles
   SET section=?, title=?, shortDescription=?, hasStar=?, tags=?, content=?
   WHERE id=?`, [ article.section, article.title, article.shortDescription, article.hasStar, article.tags, article.content, article.id ])
+
+//Filters
 
 const getFilters = () => exec('SELECT * FROM filters')
 
@@ -38,6 +42,13 @@ const updateFilter = filter => exec(`
   SET section=?, filterTag=?
   WHERE id=?`, [ filter.section, filter.filterTag, filter.id ])
 
+//Carousel images/legends
+
+const getSlides = () => exec('SELECT * FROM slides')
+
+const writeSlides = slide => exec(`
+  INSERT INTO slides (legend, image)
+  VALUES (?,?)`, [slide.legend, slide.image])
 
 module.exports = {
   getArticles,
@@ -46,4 +57,6 @@ module.exports = {
   getFilters,
   writeFilter,
   updateFilter,
+  getSlides,
+  writeSlides
 }
