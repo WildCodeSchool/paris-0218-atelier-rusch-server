@@ -27,6 +27,25 @@ CREATE TABLE filters (
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
+CREATE TABLE slides (
+  id INT NOT NULL AUTO_INCREMENT,
+  legend varchar(64),
+  image varchar(255),
+  createdAt timestamp DEFAULT current_timestamp,
+    PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+
+INSERT INTO slides (legend, image)
+  VALUES ("Ceci est un chat", "http://lorempixel.com/output/cats-q-c-640-480-1.jpg" );
+
+INSERT INTO slides (legend, image)
+  VALUES ("Ceci est un chat", "http://lorempixel.com/output/cats-q-c-640-480-2.jpg" );  
+
+INSERT INTO slides (legend, image)
+  VALUES ("Ceci est un chapacontent", "http://lorempixel.com/output/cats-q-c-640-480-3.jpg" );
+
+
 INSERT INTO filters (section, filterTag)
   VALUES ("LabRusch", 
   	"Design");
@@ -231,4 +250,3 @@ INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
     "Programmation",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
-
