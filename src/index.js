@@ -66,18 +66,4 @@ app.put('/filters/:id', (request, response, next) => {
     .catch(next)
 })
 
-//slides route
-app.get('/homepage', (request, response, next) => {
-  db.getSlides()
-    .then(slides => response.json(slides))
-})
-
-app.post('/homepage', (request, response, next) => {
-  const slide = request.body
-
-  db.writeSlides(slide)
-    .then(() => response.json('ok'))
-    .catch(next)
-})
-
 app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))

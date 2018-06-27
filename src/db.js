@@ -42,14 +42,6 @@ const updateFilter = filter => exec(`
   SET section=?, filterTag=?
   WHERE id=?`, [ filter.section, filter.filterTag, filter.id ])
 
-//Carousel images/legends
-
-const getSlides = () => exec('SELECT * FROM slides')
-
-const writeSlides = slide => exec(`
-  INSERT INTO slides (legend, image)
-  VALUES (?,?)`, [slide.legend, slide.image])
-
 module.exports = {
   getArticles,
   writeArticle,
@@ -57,6 +49,4 @@ module.exports = {
   getFilters,
   writeFilter,
   updateFilter,
-  getSlides,
-  writeSlides
 }
