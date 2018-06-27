@@ -19,7 +19,6 @@ app.use((request, response, next) => {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-
 // ROUTES
 
 app.get('/articles', (request, response, next) => {
