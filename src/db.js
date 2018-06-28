@@ -47,13 +47,13 @@ const updateFilter = filter => exec(`
 const getEquipeMembers = () => exec('SELECT * FROM equipe')
 
 const writeMember = member => exec(`
-  INSERT INTO equipe (name, image, position, description, carreer)
-  VALUES (?, ?, ?, ?, ?)`, [ member.name, member.image, member.position, member.description, member.carreer ])
+  INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
+  VALUES (?, ?, ?, ?, ?, ?, ?)`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.portfolio ])
 
 const updateMember = member => exec(`
   UPDATE equipe
-  SET name=?, image=?, position=?, description=?, carreer=?
-  WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer ])
+  SET name=?, image=?, position=?, description=?, carreer=?, linkedIn=?, portfolio=?
+  WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.portfolio ])
 
 module.exports = {
   getArticles,

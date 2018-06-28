@@ -44,24 +44,30 @@ CREATE TABLE equipe (
   createdAt timestamp DEFAULT current_timestamp,
   description varchar(1000),
   carreer varchar(1000),
+  linkedIn varchar(128),
+  portfolio varchar(128),
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
 
-INSERT INTO equipe (name, image, position, description, carreer)
+INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
   VALUES ("Michael Schnell", 
     "",
     "Designer, expert en co-design et conception de projet",
     "Convaincu que les approches fondées sur l’expérience de l’utilisateur et sur l’innovation sociale ont des effets positifs pour les collectivités publiques, Michael fonde l’Atelier Rusch et codirige les activités de conseil pour la co-conception de projets pour le privé et les collectivités.",
-    "Designer de formation (Strate - école de design), issu des beaux-arts, il travaille aux côtés de François Jégou (directeur scientifique de la 27e Région), au laboratoire d’innovation sociale Strategic Design Scenarios où il développe et applique in situ des outils de co-conception pour l’accompagnement des Agendas 21 de Bruxelles et de Molenbeek. Il diversifie ses collaborations chez Abria, cabinet de conseil en innovation de services où il intervient sur la scénarisation des parcours utilisateurs (SNCF, Cora, Croix Rouge). Suite au succès de son projet k.di lib, il fonde un collectif de designers qui réalisent des travaux de recherche en design de service. En 2014, il co-fonde l’Atelier Rusch et accompagne les collectivités et les entreprises dans la conception de projets innovants et la visualisation de processus complexes."
+    "Designer de formation (Strate - école de design), issu des beaux-arts, il travaille aux côtés de François Jégou (directeur scientifique de la 27e Région), au laboratoire d’innovation sociale Strategic Design Scenarios où il développe et applique in situ des outils de co-conception pour l’accompagnement des Agendas 21 de Bruxelles et de Molenbeek. Il diversifie ses collaborations chez Abria, cabinet de conseil en innovation de services où il intervient sur la scénarisation des parcours utilisateurs (SNCF, Cora, Croix Rouge). Suite au succès de son projet k.di lib, il fonde un collectif de designers qui réalisent des travaux de recherche en design de service. En 2014, il co-fonde l’Atelier Rusch et accompagne les collectivités et les entreprises dans la conception de projets innovants et la visualisation de processus complexes.",
+    "www.linkedin.com",
+    "www.behance.net"
   );
 
-INSERT INTO equipe (name, image, position, description, carreer)
+INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
   VALUES ("Marie Demée", 
     "",
     "Urbaniste, experte en design appliqué aux territoires",
     "Dévouée aux questions de développement durable des territoires et au développement des processus de participation, elle est co-fondatrice de l’Atelier Rusch et accompagne les collectivités et entreprises dans la co-construction de projets avec les outils et méthodes issus du design.",
-    "Diplômée de l’institut d’urbanisme de Paris et de Montréal, de l’Ecole de Management de Normandie et certifiée du programme I.D.E.A en Design Thinking, elle est consultante en Tourisme Responsable chez MaHoC, puis consultante en mobilité et développement durable au sein du groupe SOS aux côtés de Marc Fontanes (cofondateur de Mobility + et Wimoov) et Bertil De Fos (Directeur d’Auxilia conseil). Elle intègre ensuite Essonne Développement, où elle anime pendant deux ans une démarche multi-partenariale de développement économique, d’innovation sociale et territoriale entre intercommunalités. Depuis 2014, elle pilote, aux côtés de Michael Schnell, la mise en œuvre de projets participatifs territoriaux et multipartenariaux avec les méthodes du design."
+    "Diplômée de l’institut d’urbanisme de Paris et de Montréal, de l’Ecole de Management de Normandie et certifiée du programme I.D.E.A en Design Thinking, elle est consultante en Tourisme Responsable chez MaHoC, puis consultante en mobilité et développement durable au sein du groupe SOS aux côtés de Marc Fontanes (cofondateur de Mobility + et Wimoov) et Bertil De Fos (Directeur d’Auxilia conseil). Elle intègre ensuite Essonne Développement, où elle anime pendant deux ans une démarche multi-partenariale de développement économique, d’innovation sociale et territoriale entre intercommunalités. Depuis 2014, elle pilote, aux côtés de Michael Schnell, la mise en œuvre de projets participatifs territoriaux et multipartenariaux avec les méthodes du design.",
+    "www.linkedin.com",
+    "www.behance.net"
   );
 
 
