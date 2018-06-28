@@ -42,6 +42,19 @@ const updateFilter = filter => exec(`
   SET section=?, filterTag=?
   WHERE id=?`, [ filter.section, filter.filterTag, filter.id ])
 
+// Équipe members
+
+const getEquipeMembers = () => exec('SELECT * FROM equipe')
+
+const writeMember = member => exec(`
+  INSERT INTO equipe (name, image, position, description, carreer)
+  VALUES (?, ?, ?, ?, ?)`, [ member.name, member.image, member.position, member.description, member.carreer ])
+
+const updateMember = member => exec(`
+  UPDATE equipe
+  SET name=?, image=?, position=?, description=?, carreer=?
+  WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer ])
+
 module.exports = {
   getArticles,
   writeArticle,
@@ -49,4 +62,7 @@ module.exports = {
   getFilters,
   writeFilter,
   updateFilter,
+  getEquipeMembers,
+  writeMember,
+  updateMember,
 }

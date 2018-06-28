@@ -65,4 +65,26 @@ app.put('/filters/:id', (request, response, next) => {
     .catch(next)
 })
 
+app.get('/equipe', (request, response, next) => {
+  db.getEquipeMembers()
+    .then(members => response.json(members))
+})
+
+app.post('/equipe', (request, response, next) => {
+  const member = request.body
+
+  db.writeMember(member)
+    .then(() => response.json('ok'))
+    .catch(next)
+})
+
+app.put('/equipe/:id', (request, response, next) => {
+  const member = request.body
+  member.id = request.params.id
+
+  db.updateMember(member)
+    .then(() => response.json('ok'))
+    .catch(next)
+})
+
 app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))
