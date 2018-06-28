@@ -16,7 +16,7 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 
 // CRUD
 
-//Articles
+// Articles
 
 const getArticles = () => exec('SELECT * FROM articles')
 
@@ -29,7 +29,7 @@ const updateArticle = article => exec(`
   SET section=?, title=?, shortDescription=?, hasStar=?, tags=?, content=?
   WHERE id=?`, [ article.section, article.title, article.shortDescription, article.hasStar, article.tags, article.content, article.id ])
 
-//Filters
+// Filters
 
 const getFilters = () => exec('SELECT * FROM filters')
 
