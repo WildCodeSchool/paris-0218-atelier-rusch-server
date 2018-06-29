@@ -36,6 +36,60 @@ CREATE TABLE slides (
     PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
+CREATE TABLE equipe (
+  id INT NOT NULL AUTO_INCREMENT,
+  name varchar(128),
+  image varchar(256),
+  position varchar(128),
+  createdAt timestamp DEFAULT current_timestamp,
+  description varchar(1000),
+  carreer varchar(2000),
+  linkedIn varchar(128),
+  portfolio varchar(128),
+  PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+
+INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
+  VALUES ("Michael Schnell", 
+    "",
+    "Designer, expert en co-design et conception de projet",
+    "Convaincu que les approches fondées sur l’expérience de l’utilisateur et sur l’innovation sociale ont des effets positifs pour les collectivités publiques, Michael fonde l’Atelier Rusch et codirige les activités de conseil pour la co-conception de projets pour le privé et les collectivités.",
+    "Designer de formation (Strate - école de design), issu des beaux-arts, il travaille aux côtés de François Jégou (directeur scientifique de la 27e Région), au laboratoire d’innovation sociale Strategic Design Scenarios où il développe et applique in situ des outils de co-conception pour l’accompagnement des Agendas 21 de Bruxelles et de Molenbeek. Il diversifie ses collaborations chez Abria, cabinet de conseil en innovation de services où il intervient sur la scénarisation des parcours utilisateurs (SNCF, Cora, Croix Rouge). Suite au succès de son projet k.di lib, il fonde un collectif de designers qui réalisent des travaux de recherche en design de service. En 2014, il co-fonde l’Atelier Rusch et accompagne les collectivités et les entreprises dans la conception de projets innovants et la visualisation de processus complexes.",
+    "www.linkedin.com",
+    "www.behance.net"
+  );
+
+INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
+  VALUES ("Marie Demée", 
+    "",
+    "Urbaniste, experte en design appliqué aux territoires",
+    "Dévouée aux questions de développement durable des territoires et au développement des processus de participation, elle est co-fondatrice de l’Atelier Rusch et accompagne les collectivités et entreprises dans la co-construction de projets avec les outils et méthodes issus du design.",
+    "Diplômée de l’institut d’urbanisme de Paris et de Montréal, de l’Ecole de Management de Normandie et certifiée du programme I.D.E.A en Design Thinking, elle est consultante en Tourisme Responsable chez MaHoC, puis consultante en mobilité et développement durable au sein du groupe SOS aux côtés de Marc Fontanes (cofondateur de Mobility + et Wimoov) et Bertil De Fos (Directeur d’Auxilia conseil). Elle intègre ensuite Essonne Développement, où elle anime pendant deux ans une démarche multi-partenariale de développement économique, d’innovation sociale et territoriale entre intercommunalités. Depuis 2014, elle pilote, aux côtés de Michael Schnell, la mise en œuvre de projets participatifs territoriaux et multipartenariaux avec les méthodes du design.",
+    "www.linkedin.com",
+    "www.behance.net"
+  );
+
+INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
+  VALUES ("Leo Morales", 
+    "",
+    "Designer, spécialisé en innovation sociale",
+    "Animé par l’idée que le design et ses méthodologies basées sur l’immersion et l’empathie sont des outils capables d’améliorer notre quotidien, Leo rejoint l’Atelier Rusch en mars 2018 pour accompagner la coconception de démarches innovantes.",
+    "Diplômé à l’ESAD d’Orléans comme designer produit, il garde une vision pluridisciplinaire du design. Il travaille lui aussi avec François Jégou et son laboratoire d’innovation sociale, où des projets d’échelles locales comme européennes se côtoient. Il y développe un grand intérêt pour l’intégration de méthodologies de designer dans des domaines qui y sont étrangers. Après une phase d’exploration et d’expérimentation à la recherche de nouveaux territoires d’action, comme l’agriculture et les tiers lieux, il intègre l’Atelier Rusch et ses valeurs, pour donner plus de poids à la parole citoyenne, et accompagner les collectivités à innover pour améliorer leur quotidien.",
+    "www.linkedin.com",
+    "www.behance.net"
+  );
+
+INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
+  VALUES ("Aurore Guilbert", 
+    "",
+    "Experte en management de l’innovation sociale et participation",
+    "Diplômée de Sciences Po Lille en management de l’innovation sociale, Aurore souhaite mettre son énergie et ses compétences au service de l’impact social des organisations.",
+    "Passionnée des enjeux d’accès aux services essentiels (eau et assainissement, énergie, collecte des déchets) pour les populations des quartiers informels ou à faibles revenus, elle débute sa vie professionnelle par un volontariat international en entreprise au Gabon, où elle accompagne un projet d’électrification sociale des quartiers périurbains, financé par l’Union Européenne. Après des missions d’analyse territoriale et de prospective sur les services urbains du Grand Paris, au sein d’un bureau d’études, Aurore rejoint la Direction du Développement Durable de SUEZ pour y conforter sa politique de dialogue avec les parties prenantes, d’acceptabilité sociale et ancrage local, et la déployer au sein des filiales françaises et internationales du Groupe, au travers de formations participatives et de missions de conseil sur le terrain. Elle collabore désormais avec l’Atelier Rusch, dont la philosophie et les activités lui apparaissent comme le prolongement de son engagement pour l’innovation sociale et le développement local, nourris du dialogue entre acteurs publics et privés, et de la participation des citoyens et usagers.",
+    "www.linkedin.com",
+    "www.behance.net"
+  );
+
 
 INSERT INTO slides (legend, image)
   VALUES ("Ceci est un chat", "http://lorempixel.com/output/cats-q-c-640-480-1.jpg" );
@@ -100,7 +154,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Exploration des méthodes du design appliquées aux projets urbains",
     "false",
-    "Expérimentations Interventions",
+    "Expérimentations — Interventions",
     "L’Atelier Rusch continue à explorer les méthodes du design appliquées aux projets urbains. En juin dernier, nous avons remporté notre premier appel d’offre d’assistance à maîtrise d’usage dans le cadre du Nouveau Programme de Renouvellement Urbain (NPRU), en partenariat avec FORS Recherche Sociale et Rouge Vif Territoires ! Le projet s’intéresse aux problématiques socio-urbaines du quartier des Bouleaux à Neuilly-sur-Marne pour le Bailleur ICF-La Sablière. L’enjeu de cette deuxième vague de NPRU est de conduire un certain nombre d’études urbaines et sociales et d’associer le plus possible la population dans la préparation du projet urbain. ICF La Sablière participe à la dynamique d’intégration du design dans le cadre des projets de développements urbains en choisissant un groupement d’un nouveau genre entre design et urbanisme. Un nouveau genre ? Oui, car il est encore assez rare de voir des designers agir dans le cadre de ces projets. On y croise plus facilement des sociologues, urbanistes, architectes et géographes. Quel est donc le rôle d’une agence de design dans les politiques de rénovation urbaines ? Dans la mise en œuvre de leurs projets, les bailleurs et les collectivités associent de plus en plus une diversité de parties prenantes. La concertation citoyenne n’est pas nouvelle. L’enjeu d’aller plus loin que la simple concertation et de réussir à intégrer tous les points de vues, besoins et objections dans une dynamique positive et constructive est récent par contre. Il s’agit donc de dépasser ses intérêts individuels et de participer à un projet collectif. C’est pour cela que nous proposons d’introduire le travail « d’assistant à maîtrise d’usage », c’est à dire celui qui va assurer le lien entre les usagers, la maîtrise d’ouvrage et la maîtrise d’œuvre. Le designer, spécialiste dans la notion d’usage et la traduction tangible de ses besoins et attentes en scénarios, peut favoriser le dialogue et l’acceptabilité du projet. Par la conception d’outils d’aide à la participation et le prototypage des idées, le dialogue se construit sur une base plus positive et plus rapide. Chacun se place dans une posture d’expert d’usage avec une expérience qui lui est propre. Le rôle des participants n’est pas écrasé par les « sachant » mais intégrés dans un projet commun. C’est dans cet objectif de co-construction du projet et de participation des habitants que nous agissons. La particularité de ce projet est qu’ICF La Sablière souhaite associer les forces vives du quartier et ses locataires dans la construction d’un lieu central de vie citoyenne dédié à un meilleur accueil des locataires mais aussi à l’implantation d’un lieu ouvert aux activités sociales, pédagogiques et récréatives. L’enjeu est de bien comprendre des besoins et les services pour répondre aux besoins des habitants et problématiques locales."
   );
 INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
@@ -174,7 +228,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "false",
-    "Aménagements Urbanisme",
+    "Aménagements — Urbanisme",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
 INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
@@ -214,7 +268,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Aménagement urbain du square de Grenoble à Massy",
     "false",
-    "Urbanisme Services",
+    "Urbanisme — Services",
     "Objectif : Mobiliser, encadrer et animer des chantiers ouverts pour le réaménagement et la réappropriation d’un square en cœur d’îlot de quartier politique de la ville, Massy Opéra. \n Chantiers Participatifs : Suite aux ateliers participatifs, un projet co-construit par les habitants et les locataires a été validé pour passer en phase de construction. Le chantier s’est déroulé de février à mai 2017. Sur plusieurs journées de chantier, les locataires, habitants petits et grands, motivés et impliqués dans le projet se sont réunis pour bécher, desherber, contruire, peindre, semer, planter… Le Square a été inauguré le 23 mai en fanfare et en couleur."
   );
 INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
@@ -224,7 +278,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "false",
-    "Urbanisme Mobilité",
+    "Urbanisme — Mobilité",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
 INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
@@ -234,7 +288,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Aménagement urbain du square de Grenoble à Massy",
     "false",
-    "Services Aménagements",
+    "Services — Aménagements",
     "Objectif : Mobiliser, encadrer et animer des chantiers ouverts pour le réaménagement et la réappropriation d’un square en cœur d’îlot de quartier politique de la ville, Massy Opéra. \n Chantiers Participatifs : Suite aux ateliers participatifs, un projet co-construit par les habitants et les locataires a été validé pour passer en phase de construction. Le chantier s’est déroulé de février à mai 2017. Sur plusieurs journées de chantier, les locataires, habitants petits et grands, motivés et impliqués dans le projet se sont réunis pour bécher, desherber, contruire, peindre, semer, planter… Le Square a été inauguré le 23 mai en fanfare et en couleur."
   );
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
@@ -244,6 +298,6 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "true",
-    "Urbanisme Services Mobilité",
+    "Urbanisme — Services — Mobilité",
     "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
   );
