@@ -130,7 +130,7 @@ INSERT INTO filters (section, filterTag)
   	"Services");
     
 
-INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+/*INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
   VALUES ("Lab", 
   	"Le design, un processus de conception urbaine", 
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
@@ -291,6 +291,8 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "Services — Aménagements",
     "Objectif : Mobiliser, encadrer et animer des chantiers ouverts pour le réaménagement et la réappropriation d’un square en cœur d’îlot de quartier politique de la ville, Massy Opéra. \n Chantiers Participatifs : Suite aux ateliers participatifs, un projet co-construit par les habitants et les locataires a été validé pour passer en phase de construction. Le chantier s’est déroulé de février à mai 2017. Sur plusieurs journées de chantier, les locataires, habitants petits et grands, motivés et impliqués dans le projet se sont réunis pour bécher, desherber, contruire, peindre, semer, planter… Le Square a été inauguré le 23 mai en fanfare et en couleur."
   );
+*/
+
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
     "Projet",
@@ -299,5 +301,5 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "true",
     "Urbanisme — Services — Mobilité",
-    "Objectif : réaménager deux squares en cœur d’îlot dans le quartier politique de la ville, Massy Opéra, dans une démarche participative en co-construction avec les acteurs et habitants du quartier."
+    "[{\"type\":\"h2\",\"value\":\"ceci est un h2\"},{\"type\":\"p\",\"value\":\"ceci est un p\"},{\"type\":\"blockquote\",\"value\":\"ceci est un blockquote\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
   );
