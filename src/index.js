@@ -20,6 +20,13 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // ROUTES
+//Articles
+
+app.get('/articles/:id', (req, res, next) => {
+  db.readArticles.byId(req.params.id)
+    .then(article => res.json(article))
+    .catch(next)
+})
 
 app.get('/articles', (request, response, next) => {
   db.getArticles()
@@ -50,6 +57,15 @@ app.delete('/articles/:id', (req, res, next) => {
     .catch(next)
  })
 
+//ROUTES
+//filters
+
+app.get('/filters/:id', (req, res, next) => {
+  db.readFilters.byId(req.params.id)
+    .then(filter => res.json(filter))
+    .catch(next)
+})
+
 app.get('/filters', (request, response, next) => {
   db.getFilters()
     .then(filters => response.json(filters))
@@ -78,6 +94,15 @@ app.delete('/filters/:id', (req, res, next) => {
     .then(() => res.json('Filter deleted !'))
     .catch(next)
  })
+
+//ROUTES
+//equipe
+
+app.get('/equipe/:id', (req, res, next) => {
+  db.readMembers.byId(req.params.id)
+    .then(member => res.json(member))
+    .catch(next)
+})
 
 app.get('/equipe', (request, response, next) => {
   db.getEquipeMembers()
@@ -108,6 +133,15 @@ app.put('/equipe/:id', (request, response, next) => {
      .catch(next)
   })
 
+ //ROUTES
+ //partenaires
+
+ app.get('/partenaires/:id', (req, res, next) => {
+   db.readPartenaires.byId(req.params.id)
+     .then(partenaire => res.json(partenaire))
+     .catch(next)
+ })
+
 app.get('/partenaires', (request, response, next) => {
   db.getPartenaires()
     .then(partenaires => response.json(partenaires))
@@ -117,6 +151,15 @@ app.post('/partenaires', (request, response, next) => {
   const partenaire = request.body
 
   db.writePartenaires(partenaire)
+    .then(() => response.json('ok'))
+    .catch(next)
+})
+
+app.put('/partenaires/:id', (request, response, next) => {
+  const partenaire = request.body
+  partenaire.id = request.params.id
+
+  db.updatePartenaire(partenaire)
     .then(() => response.json('ok'))
     .catch(next)
 })
