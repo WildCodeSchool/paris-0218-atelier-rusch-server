@@ -21,8 +21,6 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 const readArticles = () => exec('SELECT * FROM articles')
 readArticles.byId = id => exec1(`SELECT * FROM articles WHERE id=?`, [ id ])
 
-readArticle().then(console.log,console.error)
-
 const getArticles = () => exec('SELECT * FROM articles')
 
 const writeArticle = article => exec(`
@@ -40,8 +38,6 @@ const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
 
 const readFilters = () => exec('SELECT * FROM filters')
 readFilters.byId = id => exec1(`SELECT * FROM filters WHERE id=?`, [ id ])
-
-readArticles().then(console.log,console.error)
 
 const getFilters = () => exec('SELECT * FROM filters')
 
@@ -99,19 +95,16 @@ module.exports = {
   writeArticle,
   updateArticle,
   deleteArticle,
-
   readFilters,
   getFilters,
   writeFilter,
   updateFilter,
   deleteFilter,
-
   readMembers,
   getMembers,
   writeMember,
   updateMember,
   deleteMember,
-
   readPartenaires,
   getPartenaires,
   writePartenaire,

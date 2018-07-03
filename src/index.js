@@ -105,7 +105,7 @@ app.get('/equipe/:id', (req, res, next) => {
 })
 
 app.get('/equipe', (request, response, next) => {
-  db.getEquipeMembers()
+  db.getMembers()
     .then(members => response.json(members))
 })
 
