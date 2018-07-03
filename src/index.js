@@ -43,6 +43,13 @@ app.put('/articles/:id', (request, response, next) => {
     .catch(next)
 })
 
+app.delete('/articles/:id', (req, res, next) => {
+  const articleId = req.params.id
+  db.deleteArticle(articleId)
+    .then(() => res.json('Article deleted !'))
+    .catch(next)
+ })
+
 app.get('/filters', (request, response, next) => {
   db.getFilters()
     .then(filters => response.json(filters))
@@ -65,6 +72,13 @@ app.put('/filters/:id', (request, response, next) => {
     .catch(next)
 })
 
+app.delete('/filters/:id', (req, res, next) => {
+  const filterId = req.params.id
+  db.deleteFilter(filterId)
+    .then(() => res.json('Filter deleted !'))
+    .catch(next)
+ })
+
 app.get('/equipe', (request, response, next) => {
   db.getEquipeMembers()
     .then(members => response.json(members))
@@ -86,5 +100,32 @@ app.put('/equipe/:id', (request, response, next) => {
     .then(() => response.json('ok'))
     .catch(next)
 })
+
+ app.delete('/equipe/:id', (req, res, next) => {
+   const memberId = req.params.id
+   db.deleteMember(memberId)
+     .then(() => res.json('Member deleted !'))
+     .catch(next)
+  })
+
+app.get('/partenaires', (request, response, next) => {
+  db.getPartenaires()
+    .then(partenaires => response.json(partenaires))
+})
+
+app.post('/partenaires', (request, response, next) => {
+  const partenaire = request.body
+
+  db.writePartenaires(partenaire)
+    .then(() => response.json('ok'))
+    .catch(next)
+})
+
+app.delete('/partenaires/:id', (req, res, next) => {
+  const partenaireId = req.params.id
+  db.deletePartenaire(partenaireId)
+    .then(() => res.json('Partenaire deleted !'))
+    .catch(next)
+ })
 
 app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))

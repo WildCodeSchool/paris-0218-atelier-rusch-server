@@ -29,6 +29,8 @@ const updateArticle = article => exec(`
   SET section=?, title=?, shortDescription=?, hasStar=?, tags=?, content=?
   WHERE id=?`, [ article.section, article.title, article.shortDescription, article.hasStar, article.tags, article.content, article.id ])
 
+const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
+
 // Filters
 
 const getFilters = () => exec('SELECT * FROM filters')
@@ -41,6 +43,8 @@ const updateFilter = filter => exec(`
   UPDATE filters
   SET section=?, filterTag=?
   WHERE id=?`, [ filter.section, filter.filterTag, filter.id ])
+
+const deleteFilter = id => exec(`DELETE FROM filters WHERE id=?`, [ id ])
 
 // Équipe members
 
@@ -55,14 +59,32 @@ const updateMember = member => exec(`
   SET name=?, image=?, position=?, description=?, carreer=?, linkedIn=?, portfolio=?
   WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.portfolio ])
 
+const deleteMember = id => exec(`DELETE FROM equipe WHERE id=?`, [ id ])
+
+// Partenaires
+
+const getPartenaires = () => exec('SELECT * FROM partenaires')
+
+const writePartenaires = partenaire => exec(`
+  INSERT INTO partenaires (shortDescription, image)
+  VALUES (?, ?)`, [ partenaire.shortDescription, partenaire.image ])
+
+const deletePartenaire = id => exec(`DELETE FROM partenaires WHERE id=?`, [ id ])
+
 module.exports = {
   getArticles,
   writeArticle,
   updateArticle,
+  deleteArticle,
   getFilters,
   writeFilter,
   updateFilter,
+  deleteFilter,
   getEquipeMembers,
   writeMember,
   updateMember,
+  deleteMember,
+  getPartenaires,
+  writePartenaires,
+  deletePartenaire
 }
