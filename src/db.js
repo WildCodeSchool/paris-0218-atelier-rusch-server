@@ -18,16 +18,23 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 
 // Articles
 
-const getArticles = () => exec('SELECT * FROM articles')
+const getArticles = async () => {
+  const articles = await exec('SELECT * FROM articles')
+
+  return articles.map(article => {
+    article.content = JSON.parse(article.content)
+    return article
+  })
+}
 
 const writeArticle = article => exec(`
   INSERT INTO articles (section, title, shortDescription, hasStar, tags, content)
-  VALUES (?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.shortDescription, article.hasStar, article.tags, article.content ])
+  VALUES (?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.shortDescription, article.hasStar, article.tags, JSON.stringify(article.content) ])
 
 const updateArticle = article => exec(`
   UPDATE articles
   SET section=?, title=?, shortDescription=?, hasStar=?, tags=?, content=?
-  WHERE id=?`, [ article.section, article.title, article.shortDescription, article.hasStar, article.tags, article.content, article.id ])
+  WHERE id=?`, [ article.section, article.title, article.shortDescription, article.hasStar, article.tags, JSON.stringify(article.content), article.id ])
 
 const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
 
