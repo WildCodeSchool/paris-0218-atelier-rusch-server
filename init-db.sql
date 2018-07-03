@@ -49,6 +49,22 @@ CREATE TABLE equipe (
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
+CREATE TABLE partenaires (
+  id INT NOT NULL AUTO_INCREMENT,
+  shortDescription varchar(128),
+  image varchar(256),
+  createdAt timestamp DEFAULT current_timestamp,
+  PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+INSERT INTO partenaires (shortDescription, image)
+  VALUES ("This is our first Partner", "http://app.1984.agency/images/upload/apple.png");
+
+INSERT INTO partenaires (shortDescription, image)
+  VALUES ("This is our second Partner", "http://app.1984.agency/images/upload/apple.png");
+
+INSERT INTO partenaires (shortDescription, image)
+  VALUES ("This is our third Partner", "http://app.1984.agency/images/upload/apple.png");    
 
 INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
   VALUES ("Michael Schnell", 

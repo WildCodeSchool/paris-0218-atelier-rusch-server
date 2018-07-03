@@ -55,6 +55,16 @@ const updateMember = member => exec(`
   SET name=?, image=?, position=?, description=?, carreer=?, linkedIn=?, portfolio=?
   WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.portfolio ])
 
+// Partenaires
+
+const getPartenaires = () => exec('SELECT * FROM partenaires')
+
+const writePartenaires = partenaire => exec(`
+  INSERT INTO partenaires (shortDescription, image)
+  VALUES (?, ?)`, [ partenaire.shortDescription, partenaire.image ])
+
+const deletePartenaire = id => exec(`DELETE FROM partenaires WHERE id=?`, [ id ])
+
 module.exports = {
   getArticles,
   writeArticle,
@@ -65,4 +75,7 @@ module.exports = {
   getEquipeMembers,
   writeMember,
   updateMember,
+  getPartenaires,
+  writePartenaires,
+  deletePartenaire
 }

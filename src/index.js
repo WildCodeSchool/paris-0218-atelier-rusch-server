@@ -87,4 +87,24 @@ app.put('/equipe/:id', (request, response, next) => {
     .catch(next)
 })
 
+app.get('/partenaires', (request, response, next) => {
+  db.getPartenaires()
+    .then(partenaires => response.json(partenaires))
+})
+
+app.post('/partenaires', (request, response, next) => {
+  const partenaire = request.body
+
+  db.writePartenaires(partenaire)
+    .then(() => response.json('ok'))
+    .catch(next)
+})
+
+app.delete('/partenaires/:id', (req, res, next) => {
+  const partenaireId = req.params.id
+  db.deletePartenaire(partenaireId)
+    .then(() => res.json('Partenaire deleted !'))
+    .catch(next)
+ })
+
 app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))
