@@ -18,6 +18,9 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 
 // Articles
 
+const readArticles = () => exec('SELECT * FROM articles')
+readArticles.byId = id => exec1(`SELECT * FROM articles WHERE id=?`, [ id ])
+
 const getArticles = () => exec('SELECT * FROM articles')
 
 const writeArticle = article => exec(`
@@ -32,6 +35,9 @@ const updateArticle = article => exec(`
 const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
 
 // Filters
+
+const readFilters = () => exec('SELECT * FROM filters')
+readFilters.byId = id => exec1(`SELECT * FROM filters WHERE id=?`, [ id ])
 
 const getFilters = () => exec('SELECT * FROM filters')
 
@@ -48,7 +54,11 @@ const deleteFilter = id => exec(`DELETE FROM filters WHERE id=?`, [ id ])
 
 // Équipe members
 
-const getEquipeMembers = () => exec('SELECT * FROM equipe')
+
+const readMembers = () => exec('SELECT * FROM equipe')
+readMembers.byId = id => exec1(`SELECT * FROM equipe WHERE id=?`, [ id ])
+
+const getMembers = () => exec('SELECT * FROM equipe')
 
 const writeMember = member => exec(`
   INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
@@ -63,28 +73,41 @@ const deleteMember = id => exec(`DELETE FROM equipe WHERE id=?`, [ id ])
 
 // Partenaires
 
+const readPartenaires = () => exec('SELECT * FROM partenaires')
+readPartenaires.byId = id => exec1(`SELECT * FROM partenaires WHERE id=?`, [ id ])
+
 const getPartenaires = () => exec('SELECT * FROM partenaires')
 
-const writePartenaires = partenaire => exec(`
+const writePartenaire = partenaire => exec(`
   INSERT INTO partenaires (shortDescription, image)
   VALUES (?, ?)`, [ partenaire.shortDescription, partenaire.image ])
+
+const updatePartenaire = partenaire => exec(`
+  UPDATE partenaires
+  SET shortDescription=?, image=?
+  WHERE id=?`, [ partenaire.shortDescription, partenaire.image ])
 
 const deletePartenaire = id => exec(`DELETE FROM partenaires WHERE id=?`, [ id ])
 
 module.exports = {
+  readArticles,
   getArticles,
   writeArticle,
   updateArticle,
   deleteArticle,
+  readFilters,
   getFilters,
   writeFilter,
   updateFilter,
   deleteFilter,
-  getEquipeMembers,
+  readMembers,
+  getMembers,
   writeMember,
   updateMember,
   deleteMember,
+  readPartenaires,
   getPartenaires,
-  writePartenaires,
+  writePartenaire,
+  updatePartenaire,
   deletePartenaire
 }
