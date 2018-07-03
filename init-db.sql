@@ -300,6 +300,116 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "true",
-    "Urbanisme — Services — Mobilité",
+    "Urbanisme",
     "[{\"type\":\"h2\",\"value\":\"ceci est un h2\"},{\"type\":\"p\",\"value\":\"ceci est un p\"},{\"type\":\"blockquote\",\"value\":\"ceci est un blockquote\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Projet",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Projet",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Projet",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Projet",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Article",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Article",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Article",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Article",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Article",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
+  );
+
+  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
+    VALUES (
+    "Article",
+    "Conception participative d’espace",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
+    "Atelier participatif d'aménagement du square de Grenoble à Massy",
+    "true",
+    "Urbanisme",
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"Le chantier sest déroulé de février à mai.\"},{\"type\":\"imgs\",\"value\":\"ceci est un url d image en ajout\"}]"
   );
