@@ -118,31 +118,31 @@ INSERT INTO slides (legend, image)
 
 
 INSERT INTO filters (section, filterTag)
-  VALUES ("LabRusch", 
+  VALUES ("lab", 
   	"Articles");
 
 INSERT INTO filters (section, filterTag)
-  VALUES ("LabRusch", 
+  VALUES ("lab", 
   	"Expérimentations");
 
 INSERT INTO filters (section, filterTag)
-  VALUES ("LabRusch", 
+  VALUES ("lab", 
   	"Interventions");
 
 INSERT INTO filters (section, filterTag)
-  VALUES ("Projets", 
+  VALUES ("projets", 
   	"Mobilité");
 
 INSERT INTO filters (section, filterTag)
-  VALUES ("Projets", 
+  VALUES ("projets", 
   	"Aménagements");
 
 INSERT INTO filters (section, filterTag)
-  VALUES ("Projets", 
+  VALUES ("projets", 
   	"Urbanisme");
 
 INSERT INTO filters (section, filterTag)
-  VALUES ("Projets", 
+  VALUES ("projets", 
   	"Services");
     
 
@@ -183,7 +183,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     "L’Atelier Rusch continue à explorer les méthodes du design appliquées aux projets urbains. En juin dernier, nous avons remporté notre premier appel d’offre d’assistance à maîtrise d’usage dans le cadre du Nouveau Programme de Renouvellement Urbain (NPRU), en partenariat avec FORS Recherche Sociale et Rouge Vif Territoires ! Le projet s’intéresse aux problématiques socio-urbaines du quartier des Bouleaux à Neuilly-sur-Marne pour le Bailleur ICF-La Sablière. L’enjeu de cette deuxième vague de NPRU est de conduire un certain nombre d’études urbaines et sociales et d’associer le plus possible la population dans la préparation du projet urbain. ICF La Sablière participe à la dynamique d’intégration du design dans le cadre des projets de développements urbains en choisissant un groupement d’un nouveau genre entre design et urbanisme. Un nouveau genre ? Oui, car il est encore assez rare de voir des designers agir dans le cadre de ces projets. On y croise plus facilement des sociologues, urbanistes, architectes et géographes. Quel est donc le rôle d’une agence de design dans les politiques de rénovation urbaines ? Dans la mise en œuvre de leurs projets, les bailleurs et les collectivités associent de plus en plus une diversité de parties prenantes. La concertation citoyenne n’est pas nouvelle. L’enjeu d’aller plus loin que la simple concertation et de réussir à intégrer tous les points de vues, besoins et objections dans une dynamique positive et constructive est récent par contre. Il s’agit donc de dépasser ses intérêts individuels et de participer à un projet collectif. C’est pour cela que nous proposons d’introduire le travail « d’assistant à maîtrise d’usage », c’est à dire celui qui va assurer le lien entre les usagers, la maîtrise d’ouvrage et la maîtrise d’œuvre. Le designer, spécialiste dans la notion d’usage et la traduction tangible de ses besoins et attentes en scénarios, peut favoriser le dialogue et l’acceptabilité du projet. Par la conception d’outils d’aide à la participation et le prototypage des idées, le dialogue se construit sur une base plus positive et plus rapide. Chacun se place dans une posture d’expert d’usage avec une expérience qui lui est propre. Le rôle des participants n’est pas écrasé par les « sachant » mais intégrés dans un projet commun. C’est dans cet objectif de co-construction du projet et de participation des habitants que nous agissons. La particularité de ce projet est qu’ICF La Sablière souhaite associer les forces vives du quartier et ses locataires dans la construction d’un lieu central de vie citoyenne dédié à un meilleur accueil des locataires mais aussi à l’implantation d’un lieu ouvert aux activités sociales, pédagogiques et récréatives. L’enjeu est de bien comprendre des besoins et les services pour répondre aux besoins des habitants et problématiques locales."
   );
 INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
-  VALUES ("Projet",
+  VALUES ("projets",
     "Atelier de co-construction Mobilité",
     "http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg",
     "Élaboration de dispositifs Mobilité pour PNR de la Haute Vallée de Chevreuse",
@@ -311,7 +311,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Projet",
+    "projets",
     "Conception participative d’espace",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -322,7 +322,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Projet",
+    "projets",
     "Atelier de co-construction Mobilité",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -333,7 +333,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Projet",
+    "projets",
     "Chantier participatif",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -344,7 +344,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Projet",
+    "projets",
     "Massy : ce nouveau square a été construit avec les habitants",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -355,7 +355,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Projet",
+    "projets",
     "Le design, un processus de conception urbaine",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -366,7 +366,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Projet",
+    "projets",
     "Une nouvelle année, un nouveau projet à Chartres",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -377,7 +377,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Projet",
+    "projets",
     "Le fablab,une nouvelle façon de fabriquer la ville",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -388,7 +388,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Projet",
+    "projets",
     "Le Morvan veut innover dans la filière bois",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -399,7 +399,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "La cité de l’innovation co-construite par ses futurs utilisateurs",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -410,7 +410,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "Accompagner le changement de comportement grâce au Design d’action publique",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -421,7 +421,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "Allier business et design pour concevoir les services urbains de demain",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -432,7 +432,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "Le scénario d’usage comme outil d’aide à la décision pour La Poste",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -443,7 +443,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "K.di lib’ planche sur son business plan avec l’EM Normandie",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -454,7 +454,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "RUSCH initie les jeunes designers de la KEdge au design de service",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -465,7 +465,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "Wild Code School + RUSCH créent un lieu propice à la création, à l’innovation et à la production de savoir",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -476,7 +476,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "L’article « À la découverte du design de services » sur URBANEWS",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
@@ -487,7 +487,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
 
   INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
     VALUES (
-    "Lab",
+    "lab",
     "RUSCH participe à Bellastock Québec : festival d’architecture éphémère",
     "http://atelier-rusch.com/wp-content/uploads/2016/04/5-Carte-Social-Strategic-Design-Scenarios.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
