@@ -38,7 +38,7 @@ const readArticles = async () => {
 
 readArticles.byId = async id => {
   const article = await exec1(`SELECT * FROM articles WHERE id=?`, [ id ])
-  
+
   article.content = JSON.parse(article.content)
   return article
 }
@@ -87,7 +87,7 @@ const writeMember = member => exec(`
 const updateMember = member => exec(`
   UPDATE equipe
   SET name=?, image=?, position=?, description=?, carreer=?, linkedIn=?, portfolio=?
-  WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.portfolio ])
+  WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.portfolio, member.id ])
 
 const deleteMember = id => exec(`DELETE FROM equipe WHERE id=?`, [ id ])
 
