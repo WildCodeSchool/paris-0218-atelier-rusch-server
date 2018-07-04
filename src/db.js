@@ -105,7 +105,7 @@ const writePartenaire = partenaire => exec(`
 const updatePartenaire = partenaire => exec(`
   UPDATE partenaires
   SET shortDescription=?, image=?
-  WHERE id=?`, [ partenaire.shortDescription, partenaire.image ])
+  WHERE id=?`, [ partenaire.shortDescription, partenaire.image, partenaire.id ])
 
 const deletePartenaire = id => exec(`DELETE FROM partenaires WHERE id=?`, [ id ])
 

@@ -150,7 +150,7 @@ app.get('/partenaires', (request, response, next) => {
 app.post('/partenaires', (request, response, next) => {
   const partenaire = request.body
 
-  db.writePartenaires(partenaire)
+  db.writePartenaire(partenaire)
     .then(() => response.json('ok'))
     .catch(next)
 })
