@@ -6,6 +6,19 @@ const port = process.env.PORT || 3456
 
 const app = express()
 
+//AUTHENTIFICATION requirements
+const path = require('path')
+const session = require('express-session')
+const sessionFileStore = require('session-file-store')
+const FileStore = sessionFileStore(session)
+const secret = 'je suis un beau secret'
+//AUTHENTIFICATION function
+const mustBeSignIn = (request, response, next) => {
+  console.log('session:', request.session)
+  if (!request.session.user) return next(Error('must be sign-in'))
+  next()
+}
+
 // MIDDLEWARES
 
 app.use((request, response, next) => {
@@ -18,6 +31,42 @@ app.use((request, response, next) => {
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+
+
+//AUTHENTIFICATION Setup session handler
+app.use(session({
+  secret,
+  saveUninitialized: false,
+  resave: true,
+  store: new FileStore({ path: path.join(__dirname, '../sessions'), secret })
+}))
+
+
+//AUTHENTIFICATION route de sign in
+
+app.post('/sign-in', (request, response, next) => {
+  const username = request.body.username
+  const password = request.body.password
+
+  db.getUser()
+    .then(users => {
+    /*console.log(users)*/
+    const userFound = users.find(user => user.username === username)
+    console.log(userFound, { username, password })
+    if (!userFound) {
+      throw Error('User not found')
+    }
+    if (userFound.password !== password) {
+      throw Error('Wrong password')
+    }
+
+    request.session.user = userFound
+    console.log('user', userFound.username, 'connected with great success')
+    response.json('ok')
+  })
+  .catch(next)
+
+})
 
 // ROUTES
 //Articles
