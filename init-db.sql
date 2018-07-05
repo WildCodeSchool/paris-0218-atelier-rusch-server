@@ -335,9 +335,9 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     VALUES (
     "projets",
     "Chantier participatif",
-    "http://atelier-rusch.com/wp-content/uploads/2016/04/bellastock-qc-1-credit-photo-nicolas-bousseau.jpg",
+    "http://atelier-rusch.com/wp-content/uploads/2018/04/P1010220.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
-    "false",
+    "true",
     "Aménagements",
     "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
   );
@@ -357,7 +357,7 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     VALUES (
     "projets",
     "Le design, un processus de conception urbaine",
-    "http://atelier-rusch.com/wp-content/uploads/2018/04/P1010220.jpg",
+    "http://atelier-rusch.com/wp-content/uploads/2015/02/150216-devoteam-RUSCH-design-visual.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
     "true",
     "Urbanisme - Services",
@@ -379,9 +379,9 @@ INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, ta
     VALUES (
     "projets",
     "Le fablab,une nouvelle façon de fabriquer la ville",
-    "http://atelier-rusch.com/wp-content/uploads/2015/02/150216-devoteam-RUSCH-design-visual.jpg",
+    "http://atelier-rusch.com/wp-content/uploads/2016/04/bellastock-qc-1-credit-photo-nicolas-bousseau.jpg",
     "Atelier participatif d'aménagement du square de Grenoble à Massy",
-    "true",
+    "false",
     "Services - Mobilité",
     "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
   );
