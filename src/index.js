@@ -42,6 +42,25 @@ app.use(session({
 }))
 
 
+/*app.use((request, response, next) => {
+  if (request.method !== 'POST' && request.method !== 'PUT') return next()
+  let accumulator = ''
+
+  request.on('data', data => {
+    accumulator += data
+  })
+
+  request.on('end', () => {
+    try {
+      request.body = accumulator ? JSON.parse(accumulator) : {}
+      next()
+    } catch (err) {
+      next(err)
+    }
+  })
+})*/
+
+
 //AUTHENTIFICATION route de sign in
 
 app.post('/sign-in', (request, response, next) => {
