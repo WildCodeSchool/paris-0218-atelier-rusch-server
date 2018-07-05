@@ -57,6 +57,17 @@ CREATE TABLE partenaires (
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
+CREATE TABLE user (
+  id INT NOT NULL AUTO_INCREMENT,
+  username varchar(128),
+  password varchar(256),
+  createdAt timestamp DEFAULT current_timestamp,
+  PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+INSERT INTO user (username, password)
+  VALUES ("ADMIN", "admin");
+
 INSERT INTO partenaires (shortDescription, image)
   VALUES ("This is our first Partner", "http://app.1984.agency/images/upload/apple.png");
 

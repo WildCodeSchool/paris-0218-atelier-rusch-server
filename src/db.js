@@ -16,6 +16,10 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 
 // CRUD
 
+// Users
+
+const getUser = () => exec('SELECT * FROM user')
+
 // Articles
 
 const getArticles = async () => {
@@ -129,5 +133,6 @@ module.exports = {
   getPartenaires,
   writePartenaire,
   updatePartenaire,
-  deletePartenaire
+  deletePartenaire,
+  getUser
 }
