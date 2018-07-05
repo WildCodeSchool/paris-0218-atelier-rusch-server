@@ -42,25 +42,6 @@ app.use(session({
 }))
 
 
-/*app.use((request, response, next) => {
-  if (request.method !== 'POST' && request.method !== 'PUT') return next()
-  let accumulator = ''
-
-  request.on('data', data => {
-    accumulator += data
-  })
-
-  request.on('end', () => {
-    try {
-      request.body = accumulator ? JSON.parse(accumulator) : {}
-      next()
-    } catch (err) {
-      next(err)
-    }
-  })
-})*/
-
-
 //AUTHENTIFICATION route de sign in
 
 app.post('/sign-in', (request, response, next) => {
@@ -177,7 +158,7 @@ app.get('/equipe', (request, response, next) => {
     .then(members => response.json(members))
 })
 
-app.post('/equipe', mustBeSignIn, (request, response, next) => {
+app.post('/equipe', (request, response, next) => {
   const member = request.body
 
   db.writeMember(member)
