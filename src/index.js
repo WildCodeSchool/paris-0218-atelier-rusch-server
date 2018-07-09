@@ -90,7 +90,7 @@ app.get('/articles', (request, response, next) => {
     .then(articles => response.json(articles))
 })
 
-app.post('/articles', (request, response, next) => {
+app.post('/articles', mustBeSignIn, (request, response, next) => {
   const article = request.body
 
   db.writeArticle(article)
@@ -98,7 +98,7 @@ app.post('/articles', (request, response, next) => {
     .catch(next)
 })
 
-app.put('/articles/:id', (request, response, next) => {
+app.put('/articles/:id', mustBeSignIn, (request, response, next) => {
   const article = request.body
   article.id = request.params.id
 
@@ -107,7 +107,7 @@ app.put('/articles/:id', (request, response, next) => {
     .catch(next)
 })
 
-app.delete('/articles/:id', (req, res, next) => {
+app.delete('/articles/:id', mustBeSignIn, (req, res, next) => {
   const articleId = req.params.id
   db.deleteArticle(articleId)
     .then(() => res.json('Article deleted !'))
@@ -128,7 +128,7 @@ app.get('/filters', (request, response, next) => {
     .then(filters => response.json(filters))
 })
 
-app.post('/filters', (request, response, next) => {
+app.post('/filters', mustBeSignIn, (request, response, next) => {
   const filter = request.body
 
   db.writeFilter(filter)
@@ -136,7 +136,7 @@ app.post('/filters', (request, response, next) => {
     .catch(next)
 })
 
-app.put('/filters/:id', (request, response, next) => {
+app.put('/filters/:id', mustBeSignIn, (request, response, next) => {
   const filter = request.body
   filter.id = request.params.id
 
@@ -145,7 +145,7 @@ app.put('/filters/:id', (request, response, next) => {
     .catch(next)
 })
 
-app.delete('/filters/:id', (req, res, next) => {
+app.delete('/filters/:id', mustBeSignIn, (req, res, next) => {
   const filterId = req.params.id
   db.deleteFilter(filterId)
     .then(() => res.json('Filter deleted !'))
@@ -174,7 +174,7 @@ app.post('/equipe', mustBeSignIn, (request, response, next) => {
     .catch(next)
 })
 
-app.put('/equipe/:id', (request, response, next) => {
+app.put('/equipe/:id', mustBeSignIn, (request, response, next) => {
   const member = request.body
   member.id = request.params.id
 
@@ -183,7 +183,7 @@ app.put('/equipe/:id', (request, response, next) => {
     .catch(next)
 })
 
- app.delete('/equipe/:id', (req, res, next) => {
+ app.delete('/equipe/:id', mustBeSignIn, (req, res, next) => {
    const memberId = req.params.id
    db.deleteMember(memberId)
      .then(() => res.json('Member deleted !'))
@@ -204,7 +204,7 @@ app.get('/partenaires', (request, response, next) => {
     .then(partenaires => response.json(partenaires))
 })
 
-app.post('/partenaires', (request, response, next) => {
+app.post('/partenaires', mustBeSignIn, (request, response, next) => {
   const partenaire = request.body
 
   db.writePartenaire(partenaire)
@@ -212,7 +212,7 @@ app.post('/partenaires', (request, response, next) => {
     .catch(next)
 })
 
-app.put('/partenaires/:id', (request, response, next) => {
+app.put('/partenaires/:id', mustBeSignIn, (request, response, next) => {
   const partenaire = request.body
   partenaire.id = request.params.id
 
@@ -221,7 +221,7 @@ app.put('/partenaires/:id', (request, response, next) => {
     .catch(next)
 })
 
-app.delete('/partenaires/:id', (req, res, next) => {
+app.delete('/partenaires/:id', mustBeSignIn, (req, res, next) => {
   const partenaireId = req.params.id
   db.deletePartenaire(partenaireId)
     .then(() => res.json('Partenaire deleted !'))
