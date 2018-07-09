@@ -68,6 +68,14 @@ app.post('/sign-in', (request, response, next) => {
 
 })
 
+app.get('/sign-out', (request, response, next) => {
+
+  request.session = null
+  response.json('user deleted')
+  .catch(next)
+
+})
+
 // ROUTES
 //Articles
 
@@ -158,7 +166,7 @@ app.get('/equipe', (request, response, next) => {
     .then(members => response.json(members))
 })
 
-app.post('/equipe', (request, response, next) => {
+app.post('/equipe', mustBeSignIn, (request, response, next) => {
   const member = request.body
 
   db.writeMember(member)
