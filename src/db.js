@@ -48,13 +48,13 @@ readArticles.byId = async id => {
 }
 
 const writeArticle = article => exec(`
-  INSERT INTO articles (section, title, headerImage, shortDescription, hasStar, tags, content)
-  VALUES (?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.hasStar, article.tags, JSON.stringify(article.content) ])
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, article.tags, JSON.stringify(article.content) ])
 
 const updateArticle = article => exec(`
   UPDATE articles
-  SET section=?, title=?, headerImage=?, shortDescription=?, hasStar=?, tags=?, content=?
-  WHERE id=?`, [ article.section, article.title, article.headerImage, article.shortDescription, article.hasStar, article.tags, JSON.stringify(article.content), article.id ])
+  SET section=?, title=?, headerImage=?, shortDescription=?, projectLink=?, hasStar=?, tags=?, content=?
+  WHERE id=?`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, article.tags, JSON.stringify(article.content), article.id ])
 
 const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
 
