@@ -18,6 +18,7 @@ CREATE TABLE articles (
   hasStar varchar(64),
   tags varchar(512),
   content varchar(10024),
+  partners varchar(512),
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
@@ -52,6 +53,7 @@ CREATE TABLE equipe (
 
 CREATE TABLE partenaires (
   id INT NOT NULL AUTO_INCREMENT,
+  name varchar(256),
   shortDescription varchar(128),
   image varchar(256),
   createdAt timestamp DEFAULT current_timestamp,
@@ -69,14 +71,14 @@ CREATE TABLE user (
 INSERT INTO user (username, password)
   VALUES ("ADMIN", "admin");
 
-INSERT INTO partenaires (shortDescription, image)
-  VALUES ("This is our first Partner", "http://app.1984.agency/images/upload/apple.png");
+INSERT INTO partenaires (name, shortDescription, image)
+  VALUES ("Paris-Saclay", "This is our first Partner", "http://app.1984.agency/images/upload/apple.png");
 
-INSERT INTO partenaires (shortDescription, image)
-  VALUES ("This is our second Partner", "http://app.1984.agency/images/upload/apple.png");
+INSERT INTO partenaires (name, shortDescription, image)
+  VALUES ("Erigere", "This is our second Partner", "http://app.1984.agency/images/upload/apple.png");
 
-INSERT INTO partenaires (shortDescription, image)
-  VALUES ("This is our third Partner", "http://app.1984.agency/images/upload/apple.png");    
+INSERT INTO partenaires (name, shortDescription, image)
+  VALUES ("Massy", "This is our third Partner", "http://app.1984.agency/images/upload/apple.png");    
 
 INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
   VALUES ("Michael Schnell", 
@@ -157,7 +159,7 @@ INSERT INTO filters (section, filterTag)
   VALUES ("projets", 
   	"Services");
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "projets",
     "Conception participative d’espace",
@@ -166,10 +168,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Mobilité\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    "Paris-Saclay"
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "projets",
     "Atelier de co-construction Mobilité",
@@ -178,10 +181,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "1",
     "[\"Mobilité\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "projets",
     "Chantier participatif",
@@ -190,10 +194,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "1",
     "[\"Aménagements\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "projets",
     "Massy : ce nouveau square a été construit avec les habitants",
@@ -202,10 +207,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Aménagements\",\"Urbanisme\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "projets",
     "Le design, un processus de conception urbaine",
@@ -214,10 +220,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "1",
     "[\"Services\",\"Urbanisme\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "projets",
     "Une nouvelle année, un nouveau projet à Chartres",
@@ -226,10 +233,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Urbanisme\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "projets",
     "Le fablab,une nouvelle façon de fabriquer la ville",
@@ -238,10 +246,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Services\",\"Mobilité\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "projets",
     "Le Morvan veut innover dans la filière bois",
@@ -250,10 +259,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Services\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "La cité de l’innovation co-construite par ses futurs utilisateurs",
@@ -262,10 +272,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Articles\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "Accompagner le changement de comportement grâce au Design d’action publique",
@@ -274,10 +285,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "1",
     "[\"Articles\",\"Expérimentations\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "Allier business et design pour concevoir les services urbains de demain",
@@ -286,10 +298,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Articles\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "Le scénario d’usage comme outil d’aide à la décision pour La Poste",
@@ -298,10 +311,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Expérimentations\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "K.di lib’ planche sur son business plan avec l’EM Normandie",
@@ -310,10 +324,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "1",
     "[\"Expérimentations\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "RUSCH initie les jeunes designers de la KEdge au design de service",
@@ -322,10 +337,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Expérimentations\",\"Interventions\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "Wild Code School + RUSCH créent un lieu propice à la création, à l’innovation et à la production de savoir",
@@ -334,10 +350,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Interventions\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "L’article « À la découverte du design de services » sur URBANEWS",
@@ -346,10 +363,11 @@ INSERT INTO filters (section, filterTag)
     "",
     "1",
     "[\"Interventions\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );
 
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
     VALUES (
     "lab",
     "RUSCH participe à Bellastock Québec : festival d’architecture éphémère",
@@ -358,5 +376,6 @@ INSERT INTO filters (section, filterTag)
     "",
     "0",
     "[\"Interventions\",\"Articles\"]",
-    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]"
+    "[{\"type\":\"h2\",\"value\":\"Conception participative\"},{\"type\":\"p\",\"value\":\"Lorem ipsum dolor amet pitchfork organic irony asymmetrical, occupy austin coloring book banh mi 3 wolf moon thundercats letterpress. Mustache af brooklyn try-hard palo santo, wolf tumeric. Glossier williamsburg yuccie meh slow-carb chia VHS cloud bread brunch lo-fi cardigan readymade sustainable microdosing. Sustainable live-edge kickstarter, vegan master cleanse tilde tote bag sartorial affogato. Ethical gastropub artisan tattooed, food truck letterpress trust fund.\"},{\"type\":\"blockquote\",\"value\":\"La créativité est contagieuse, faites la tourner !\"},{\"type\":\"imgs\",\"value\":\"http://atelier-rusch.com/wp-content/uploads/2018/04/Sce%CC%80nes-de-rues-Atelier-Rusch_rvb-copy.jpg\"}]",
+    ""
   );

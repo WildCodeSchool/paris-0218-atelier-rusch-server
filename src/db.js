@@ -51,13 +51,13 @@ readArticles.byId = async id => {
 }
 
 const writeArticle = article => exec(`
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content) ], console.log(article))
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content) ], article.partners, console.log(article))
 
 const updateArticle = article => exec(`
   UPDATE articles
-  SET section=?, title=?, headerImage=?, shortDescription=?, projectLink=?, hasStar=?, tags=?, content=?
-  WHERE id=?`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), article.id ])
+  SET section=?, title=?, headerImage=?, shortDescription=?, projectLink=?, hasStar=?, tags=?, content=?, partners=?
+  WHERE id=?`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), article.partners, article.id ])
 
 const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
 
@@ -106,13 +106,13 @@ readPartenaires.byId = id => exec1(`SELECT * FROM partenaires WHERE id=?`, [ id 
 const getPartenaires = () => exec('SELECT * FROM partenaires')
 
 const writePartenaire = partenaire => exec(`
-  INSERT INTO partenaires (shortDescription, image)
-  VALUES (?, ?)`, [ partenaire.shortDescription, partenaire.image ])
+  INSERT INTO partenaires (name, shortDescription, image)
+  VALUES (?, ?, ?)`, [ partenaire.name, partenaire.shortDescription, partenaire.image ])
 
 const updatePartenaire = partenaire => exec(`
   UPDATE partenaires
-  SET shortDescription=?, image=?
-  WHERE id=?`, [ partenaire.shortDescription, partenaire.image, partenaire.id ])
+  SET name=?, shortDescription=?, image=?
+  WHERE id=?`, [ partenaire.name, partenaire.shortDescription, partenaire.image, partenaire.id ])
 
 const deletePartenaire = id => exec(`DELETE FROM partenaires WHERE id=?`, [ id ])
 
