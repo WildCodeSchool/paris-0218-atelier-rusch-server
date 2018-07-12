@@ -28,6 +28,7 @@ const getArticles = async () => {
   return articles.map(article => {
     article.content = JSON.parse(article.content)
     article.tags = JSON.parse(article.tags)
+    article.partners = JSON.parse(article.partners)
     return article
   })
 }
@@ -38,6 +39,7 @@ const readArticles = async () => {
   return articles.map(article => {
     article.content = JSON.parse(article.content)
     article.tags = JSON.parse(article.tags)
+    article.partners = JSON.parse(article.partners)
     return article
   })
 }
@@ -47,17 +49,18 @@ readArticles.byId = async id => {
 
   article.content = JSON.parse(article.content)
   article.tags = JSON.parse(article.tags)
+  article.partners = JSON.parse(article.partners)
   return article
 }
 
 const writeArticle = article => exec(`
   INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content) ], article.partners, console.log(article))
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content) ], JSON.stringify(article.partners), console.log(article))
 
 const updateArticle = article => exec(`
   UPDATE articles
   SET section=?, title=?, headerImage=?, shortDescription=?, projectLink=?, hasStar=?, tags=?, content=?, partners=?
-  WHERE id=?`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), article.partners, article.id ])
+  WHERE id=?`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), JSON.stringify(article.partners), article.id ])
 
 const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
 
