@@ -91,13 +91,13 @@ readMembers.byId = id => exec1(`SELECT * FROM equipe WHERE id=?`, [ id ])
 const getMembers = () => exec('SELECT * FROM equipe')
 
 const writeMember = member => exec(`
-  INSERT INTO equipe (name, image, position, description, carreer, linkedIn, portfolio)
-  VALUES (?, ?, ?, ?, ?, ?, ?)`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.portfolio ])
+  INSERT INTO equipe (name, image, position, description, carreer, linkedIn)
+  VALUES (?, ?, ?, ?, ?, ?)`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn ])
 
 const updateMember = member => exec(`
   UPDATE equipe
-  SET name=?, image=?, position=?, description=?, carreer=?, linkedIn=?, portfolio=?
-  WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.portfolio, member.id ])
+  SET name=?, image=?, position=?, description=?, carreer=?, linkedIn=?
+  WHERE id=?`, [ member.name, member.image, member.position, member.description, member.carreer, member.linkedIn, member.id ])
 
 const deleteMember = id => exec(`DELETE FROM equipe WHERE id=?`, [ id ])
 
