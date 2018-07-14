@@ -54,13 +54,13 @@ readArticles.byId = async id => {
 }
 
 const writeArticle = article => exec(`
-  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), JSON.stringify(article.partners)], console.log(article))
+  INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners, isDraft)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), JSON.stringify(article.partners), article.isDraft ], console.log(article))
 
 const updateArticle = article => exec(`
   UPDATE articles
-  SET section=?, title=?, headerImage=?, shortDescription=?, projectLink=?, hasStar=?, tags=?, content=?, partners=?
-  WHERE id=?`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), JSON.stringify(article.partners), article.id ])
+  SET section=?, title=?, headerImage=?, shortDescription=?, projectLink=?, hasStar=?, tags=?, content=?, partners=?, isDraft=?
+  WHERE id=?`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), JSON.stringify(article.partners), article.isDraft, article.id ])
 
 const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
 
