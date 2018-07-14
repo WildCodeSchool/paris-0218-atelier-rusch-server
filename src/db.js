@@ -55,7 +55,7 @@ readArticles.byId = async id => {
 
 const writeArticle = article => exec(`
   INSERT INTO articles (section, title, headerImage, shortDescription, projectLink, hasStar, tags, content, partners)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content) ], JSON.stringify(article.partners), console.log(article))
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [ article.section, article.title, article.headerImage, article.shortDescription, article.projectLink, article.hasStar, JSON.stringify(article.tags), JSON.stringify(article.content), JSON.stringify(article.partners)], console.log(article))
 
 const updateArticle = article => exec(`
   UPDATE articles
