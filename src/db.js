@@ -18,12 +18,12 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 
 // Users
 
-const getUser = () => exec('SELECT * FROM user')
+const getUser = () => exec('SELECT * FROM user ORDER BY createdAt DESC')
 
 // Articles
 
 const getArticles = async () => {
-  const articles = await exec('SELECT * FROM articles')
+  const articles = await exec('SELECT * FROM articles ORDER BY createdAt DESC')
 
   return articles.map(article => {
     article.content = JSON.parse(article.content)
@@ -34,7 +34,7 @@ const getArticles = async () => {
 }
 
 const readArticles = async () => {
-  const articles = await exec('SELECT * FROM articles')
+  const articles = await exec('SELECT * FROM articles ORDER BY createdAt DESC')
 
   return articles.map(article => {
     article.content = JSON.parse(article.content)
@@ -45,7 +45,7 @@ const readArticles = async () => {
 }
 
 readArticles.byId = async id => {
-  const article = await exec1(`SELECT * FROM articles WHERE id=?`, [ id ])
+  const article = await exec1(`SELECT * FROM articles ORDER BY createdAt DESC WHERE id=?`, [ id ])
 
   article.content = JSON.parse(article.content)
   article.tags = JSON.parse(article.tags)
@@ -66,10 +66,10 @@ const deleteArticle = id => exec(`DELETE FROM articles WHERE id=?`, [ id ])
 
 // Filters
 
-const readFilters = () => exec('SELECT * FROM filters')
-readFilters.byId = id => exec1(`SELECT * FROM filters WHERE id=?`, [ id ])
+const readFilters = () => exec('SELECT * FROM filters ORDER BY createdAt DESC')
+readFilters.byId = id => exec1(`SELECT * FROM filters ORDER BY createdAt DESC WHERE id=?`, [ id ])
 
-const getFilters = () => exec('SELECT * FROM filters')
+const getFilters = () => exec('SELECT * FROM filters ORDER BY createdAt DESC')
 
 const writeFilter = filter => exec(`
   INSERT INTO filters (section, filterTag)
@@ -85,10 +85,10 @@ const deleteFilter = id => exec(`DELETE FROM filters WHERE id=?`, [ id ])
 // Équipe members
 
 
-const readMembers = () => exec('SELECT * FROM equipe')
-readMembers.byId = id => exec1(`SELECT * FROM equipe WHERE id=?`, [ id ])
+const readMembers = () => exec('SELECT * FROM equipe ORDER BY createdAt DESC')
+readMembers.byId = id => exec1(`SELECT * FROM equipe ORDER BY createdAt DESC WHERE id=?`, [ id ])
 
-const getMembers = () => exec('SELECT * FROM equipe')
+const getMembers = () => exec('SELECT * FROM equipe ORDER BY createdAt DESC')
 
 const writeMember = member => exec(`
   INSERT INTO equipe (name, image, position, description, carreer, linkedIn)
@@ -103,10 +103,10 @@ const deleteMember = id => exec(`DELETE FROM equipe WHERE id=?`, [ id ])
 
 // Partenaires
 
-const readPartenaires = () => exec('SELECT * FROM partenaires')
-readPartenaires.byId = id => exec1(`SELECT * FROM partenaires WHERE id=?`, [ id ])
+const readPartenaires = () => exec('SELECT * FROM partenaires ORDER BY createdAt DESC')
+readPartenaires.byId = id => exec1(`SELECT * FROM partenaires ORDER BY createdAt DESC WHERE id=?`, [ id ])
 
-const getPartenaires = () => exec('SELECT * FROM partenaires')
+const getPartenaires = () => exec('SELECT * FROM partenaires ORDER BY createdAt DESC')
 
 const writePartenaire = partenaire => exec(`
   INSERT INTO partenaires (name, shortDescription, image)
