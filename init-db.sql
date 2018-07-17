@@ -35,14 +35,6 @@ CREATE TABLE filters (
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
-CREATE TABLE slides (
-  id INT NOT NULL AUTO_INCREMENT,
-  legend varchar(64),
-  image varchar(255),
-  createdAt timestamp DEFAULT current_timestamp,
-    PRIMARY KEY (id)
-) ENGINE=INNODB;
-
 CREATE TABLE equipe (
   id INT NOT NULL AUTO_INCREMENT,
   name varchar(128),
@@ -122,17 +114,6 @@ INSERT INTO equipe (name, image, position, description, carreer, linkedIn)
     "Passionnée des enjeux d’accès aux services essentiels (eau et assainissement, énergie, collecte des déchets) pour les populations des quartiers informels ou à faibles revenus, elle débute sa vie professionnelle par un volontariat international en entreprise au Gabon, où elle accompagne un projet d’électrification sociale des quartiers périurbains, financé par l’Union Européenne. Après des missions d’analyse territoriale et de prospective sur les services urbains du Grand Paris, au sein d’un bureau d’études, Aurore rejoint la Direction du Développement Durable de SUEZ pour y conforter sa politique de dialogue avec les parties prenantes, d’acceptabilité sociale et ancrage local, et la déployer au sein des filiales françaises et internationales du Groupe, au travers de formations participatives et de missions de conseil sur le terrain. Elle collabore désormais avec l’Atelier Rusch, dont la philosophie et les activités lui apparaissent comme le prolongement de son engagement pour l’innovation sociale et le développement local, nourris du dialogue entre acteurs publics et privés, et de la participation des citoyens et usagers.",
     "www.linkedin.com"
   );
-
-
-INSERT INTO slides (legend, image)
-  VALUES ("Ceci est un chat", "http://lorempixel.com/output/cats-q-c-640-480-1.jpg" );
-
-INSERT INTO slides (legend, image)
-  VALUES ("Ceci est un chat", "http://lorempixel.com/output/cats-q-c-640-480-2.jpg" );  
-
-INSERT INTO slides (legend, image)
-  VALUES ("Ceci est un chapacontent", "http://lorempixel.com/output/cats-q-c-640-480-3.jpg" );
-
 
 INSERT INTO filters (section, filterTag)
   VALUES ("lab", 
