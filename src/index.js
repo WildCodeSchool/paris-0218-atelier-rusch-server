@@ -51,9 +51,8 @@ app.post('/sign-in', (request, response, next) => {
 
   db.getUser()
     .then(users => {
-    /*console.log(users)*/
     const userFound = users.find(user => user.username === username)
-    console.log(userFound, { username, password })
+
     if (!userFound) {
       throw Error('User not found')
     }
@@ -69,12 +68,10 @@ app.post('/sign-in', (request, response, next) => {
 
 })
 
-app.get('/sign-out', (request, response, next) => {
+app.get('/sign-out', (req, res, next) => {
+  req.session = null
 
-  request.session = null
-  response.json('user deleted')
-  .catch(next)
-
+  res.json('ok').catch(next)
 })
 
 // ROUTES
@@ -111,7 +108,7 @@ app.put('/articles/:id', mustBeSignIn, (request, response, next) => {
 app.delete('/articles/:id', mustBeSignIn, (req, res, next) => {
   const articleId = req.params.id
   db.deleteArticle(articleId)
-    .then(() => res.json('Article deleted !'))
+    .then(() => res.json('ok'))
     .catch(next)
  })
 
@@ -149,7 +146,7 @@ app.put('/filters/:id', mustBeSignIn, (request, response, next) => {
 app.delete('/filters/:id', mustBeSignIn, (req, res, next) => {
   const filterId = req.params.id
   db.deleteFilter(filterId)
-    .then(() => res.json('Filter deleted !'))
+    .then(() => res.json('ok'))
     .catch(next)
  })
 
@@ -187,7 +184,7 @@ app.put('/equipe/:id', mustBeSignIn, (request, response, next) => {
  app.delete('/equipe/:id', mustBeSignIn, (req, res, next) => {
    const memberId = req.params.id
    db.deleteMember(memberId)
-     .then(() => res.json('Member deleted !'))
+     .then(() => res.json('ok'))
      .catch(next)
   })
 
@@ -225,8 +222,8 @@ app.put('/partenaires/:id', mustBeSignIn, (request, response, next) => {
 app.delete('/partenaires/:id', mustBeSignIn, (req, res, next) => {
   const partenaireId = req.params.id
   db.deletePartenaire(partenaireId)
-    .then(() => res.json('Partenaire deleted !'))
+    .then(() => res.json('ok'))
     .catch(next)
  })
 
-app.listen(port, () => console.log(`connecté au port ${port}!`))
+app.listen(port, () => console.log(`Server started on port: ${port}!`))
