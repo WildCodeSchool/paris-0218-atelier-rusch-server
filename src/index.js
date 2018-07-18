@@ -36,6 +36,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //AUTHENTIFICATION Setup session handler
 app.use(session({
   secret,
+  cookie: {maxAge: 365 * 24 * 60 * 60 * 1000},
   saveUninitialized: false,
   resave: true,
   store: new FileStore({ path: path.join(__dirname, '../sessions'), secret })
@@ -228,4 +229,4 @@ app.delete('/partenaires/:id', mustBeSignIn, (req, res, next) => {
     .catch(next)
  })
 
-app.listen(port, () => console.log(`Oh oui, je suis connecté au port ${port}!!! YEAH!!! C\'est tellement bon!! C\'est une expérience incomparable!!`))
+app.listen(port, () => console.log(`connecté au port ${port}!`))
