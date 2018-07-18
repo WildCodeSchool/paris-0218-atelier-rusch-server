@@ -1,10 +1,6 @@
 DROP DATABASE IF EXISTS rusch;
 CREATE DATABASE rusch;
 
-# NOTICE: only for development purpose
-CREATE USER IF NOT EXISTS 'server'@'localhost';
-GRANT ALL PRIVILEGES ON rusch.* To 'server'@'localhost' IDENTIFIED BY '123456';
-
 USE rusch;
 
 CREATE TABLE articles (

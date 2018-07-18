@@ -11,7 +11,7 @@ const path = require('path')
 const session = require('express-session')
 const sessionFileStore = require('session-file-store')
 const FileStore = sessionFileStore(session)
-const secret = 'je suis un beau secret'
+const secret = process.env.SESSION_SECRET || console.log('missing SESSION_SECRET!') || 'je suis un beau secret'
 //AUTHENTIFICATION function
 const mustBeSignIn = (request, response, next) => {
   console.log('session:', request.session)
