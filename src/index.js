@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 
 const db = require('./db')
-const port = process.env.PORT || 3456
+const port = process.env.PORT || 5000
 
 const app = express()
 
