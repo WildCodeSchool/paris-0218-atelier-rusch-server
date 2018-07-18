@@ -18,12 +18,12 @@ const exec1 = (query, params) => first(exec(`${query} LIMIT 1`, params))
 
 // Users
 
-const getUser = () => exec('SELECT * FROM user ORDER BY createdAt DESC')
+const getUser = () => exec('SELECT * FROM user')
 
 // Articles
 
 const getArticles = async () => {
-  const articles = await exec('SELECT * FROM articles ORDER BY createdAt DESC')
+  const articles = await exec('SELECT * FROM articles ORDER BY date DESC')
 
   return articles.map(article => {
     article.content = JSON.parse(article.content)
@@ -34,7 +34,7 @@ const getArticles = async () => {
 }
 
 const readArticles = async () => {
-  const articles = await exec('SELECT * FROM articles ORDER BY createdAt DESC')
+  const articles = await exec('SELECT * FROM articles ORDER BY date DESC')
 
   return articles.map(article => {
     article.content = JSON.parse(article.content)
@@ -45,7 +45,7 @@ const readArticles = async () => {
 }
 
 readArticles.byId = async id => {
-  const article = await exec1(`SELECT * FROM articles ORDER BY createdAt DESC WHERE id=?`, [ id ])
+  const article = await exec1(`SELECT * FROM articles ORDER BY date DESC WHERE id=?`, [ id ])
 
   article.content = JSON.parse(article.content)
   article.tags = JSON.parse(article.tags)
