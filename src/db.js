@@ -84,7 +84,6 @@ const deleteFilter = id => exec(`DELETE FROM filters WHERE id=?`, [ id ])
 
 // Équipe members
 
-
 const readMembers = () => exec('SELECT * FROM equipe ORDER BY createdAt DESC')
 readMembers.byId = id => exec1(`SELECT * FROM equipe ORDER BY createdAt DESC WHERE id=?`, [ id ])
 

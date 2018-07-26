@@ -6,13 +6,13 @@ const port = process.env.PORT || 5000
 
 const app = express()
 
-//AUTHENTIFICATION requirements
+// AUTHENTIFICATION requirements
 const path = require('path')
 const session = require('express-session')
 const sessionFileStore = require('session-file-store')
 const FileStore = sessionFileStore(session)
 const secret = process.env.SESSION_SECRET || console.log('missing SESSION_SECRET!') || 'je suis un beau secret'
-//AUTHENTIFICATION function
+// AUTHENTIFICATION function
 const mustBeSignIn = (request, response, next) => {
   console.log('session:', request.session)
   if (!request.session.user) return next(Error('must be sign-in'))
@@ -32,8 +32,7 @@ app.use((request, response, next) => {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-
-//AUTHENTIFICATION Setup session handler
+// AUTHENTIFICATION Setup session handler
 app.use(session({
   secret,
   cookie: {maxAge: 365 * 24 * 60 * 60 * 1000},
@@ -42,8 +41,7 @@ app.use(session({
   store: new FileStore({ path: path.join(__dirname, '../sessions'), secret })
 }))
 
-
-//AUTHENTIFICATION route de sign in
+// AUTHENTIFICATION route de sign in
 
 app.post('/sign-in', (request, response, next) => {
   const username = request.body.username
@@ -51,21 +49,20 @@ app.post('/sign-in', (request, response, next) => {
 
   db.getUser()
     .then(users => {
-    const userFound = users.find(user => user.username === username)
+      const userFound = users.find(user => user.username === username)
 
-    if (!userFound) {
-      throw Error('User not found')
-    }
-    if (userFound.password !== password) {
-      throw Error('Wrong password')
-    }
+      if (!userFound) {
+        throw Error('User not found')
+      }
+      if (userFound.password !== password) {
+        throw Error('Wrong password')
+      }
 
-    request.session.user = userFound
-    console.log('user', userFound.username, 'connected with great success')
-    response.json('ok')
-  })
-  .catch(next)
-
+      request.session.user = userFound
+      console.log('user', userFound.username, 'connected with great success')
+      response.json('ok')
+    })
+    .catch(next)
 })
 
 app.get('/sign-out', (req, res, next) => {
@@ -75,7 +72,7 @@ app.get('/sign-out', (req, res, next) => {
 })
 
 // ROUTES
-//Articles
+// Articles
 
 app.get('/articles/:id', (req, res, next) => {
   db.readArticles.byId(req.params.id)
@@ -110,10 +107,10 @@ app.delete('/articles/:id', mustBeSignIn, (req, res, next) => {
   db.deleteArticle(articleId)
     .then(() => res.json('ok'))
     .catch(next)
- })
+})
 
-//ROUTES
-//filters
+// ROUTES
+// filters
 
 app.get('/filters/:id', (req, res, next) => {
   db.readFilters.byId(req.params.id)
@@ -148,10 +145,10 @@ app.delete('/filters/:id', mustBeSignIn, (req, res, next) => {
   db.deleteFilter(filterId)
     .then(() => res.json('ok'))
     .catch(next)
- })
+})
 
-//ROUTES
-//equipe
+// ROUTES
+// equipe
 
 app.get('/equipe/:id', (req, res, next) => {
   db.readMembers.byId(req.params.id)
@@ -181,21 +178,21 @@ app.put('/equipe/:id', mustBeSignIn, (request, response, next) => {
     .catch(next)
 })
 
- app.delete('/equipe/:id', mustBeSignIn, (req, res, next) => {
-   const memberId = req.params.id
-   db.deleteMember(memberId)
-     .then(() => res.json('ok'))
-     .catch(next)
-  })
+app.delete('/equipe/:id', mustBeSignIn, (req, res, next) => {
+  const memberId = req.params.id
+  db.deleteMember(memberId)
+    .then(() => res.json('ok'))
+    .catch(next)
+})
 
- //ROUTES
- //partenaires
+// ROUTES
+// partenaires
 
- app.get('/partenaires/:id', (req, res, next) => {
-   db.readPartenaires.byId(req.params.id)
-     .then(partenaire => res.json(partenaire))
-     .catch(next)
- })
+app.get('/partenaires/:id', (req, res, next) => {
+  db.readPartenaires.byId(req.params.id)
+    .then(partenaire => res.json(partenaire))
+    .catch(next)
+})
 
 app.get('/partenaires', (request, response, next) => {
   db.getPartenaires()
@@ -224,6 +221,6 @@ app.delete('/partenaires/:id', mustBeSignIn, (req, res, next) => {
   db.deletePartenaire(partenaireId)
     .then(() => res.json('ok'))
     .catch(next)
- })
+})
 
 app.listen(port, () => console.log(`Server started on port: ${port}!`))
