@@ -71,7 +71,7 @@ app.post('/sign-in', (request, response, next) => {
 app.get('/sign-out', (req, res, next) => {
   req.session = null
 
-  res.json('ok').catch(next)
+  res.json('ok')
 })
 
 // ROUTES
