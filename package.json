@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "nodemon src --ignore client --ignore sessions",
-    "test": "jest --watchAll",
+    "test": "echo 'no tests'",
     "lint:fix": "standard --fix | snazzy",
     "lint": "standard | snazzy"
   },
